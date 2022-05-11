@@ -22,19 +22,16 @@ export default function SingleArtist() {
   );
 
   let artistInfo;
-  let memberList;
+  let memberList = [];
   const originalName = bandName.replace(/\+/g, " ");
   //let { name, members, genre, logoCredits, logo, bio   = artistInfo[0];}
 
   if (artist !== "") {
     artistInfo = artist.filter((artist) => artist.name === originalName);
-    console.log(artist);
-    //object destructering
-
-    memberList = artistInfo[0].members.map((m) => {
-      return <h3 key={m}>{m}</h3>;
+    console.log(artistInfo[0]);
+    artistInfo[0].members.forEach((m) => {
+      memberList.push(<h3 key={m}>{m}</h3>);
     });
-    console.log(memberList);
   }
 
   return (
@@ -42,7 +39,7 @@ export default function SingleArtist() {
       {artist !== "" ? <h1>{artistInfo[0].name}</h1> : null}
 
       <h3>Members: </h3>
-      {artist !== "" ? <h3> {artistInfo[0].members}</h3> : null}
+      {artist !== "" ? <div> {memberList}</div> : null}
 
       {artist !== "" ? (
         <img
