@@ -2,6 +2,7 @@ import { Link, Routes, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import Artists from "./routes/Artists";
 import Schedule from "./routes/Schedule";
+import SingleArtist from "./routes/SingleArtist";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="artists" element={<Artists />} />
         <Route path="schedule" element={<Schedule />} />
-        {/* <Route path="artists/:id" element={<Schedule />} /> */}
+        <Route path="artists/:bandName" element={<SingleArtist />} />
       </Routes>
     </div>
   );

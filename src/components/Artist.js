@@ -1,4 +1,4 @@
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Artist(props) {
   /*   function getImg() {
@@ -29,7 +29,12 @@ export default function Artist(props) {
         alt="artist img"
       />
 
-      {/*    <Link to={`/artists/${props.product.name}`}>Read More</Link>  */}
+      <Link
+        /* regex s is spaces, flag: g global and looks through whole string, "" is what we want to replace it with >nothing<  */
+        to={`/artists/${props.artist.name.replace(/\s+/g, "+")}`}
+      >
+        Read More
+      </Link>
     </article>
   );
 }
