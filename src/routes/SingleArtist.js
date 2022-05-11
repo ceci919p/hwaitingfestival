@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 export default function SingleArtist() {
   const { bandName } = useParams();
-  const [artist, setArtist] = useState([]);
+  const [artist, setArtist] = useState("");
   //navn på array - det er det der er state, navn på funktion - det skal kalde state (rebuilde)
 
   useEffect(
@@ -21,15 +21,43 @@ export default function SingleArtist() {
     ]
   );
 
+  let artistInfo;
+  let memberList;
   const originalName = bandName.replace(/\+/g, " ");
-  const artistInfo = artist.filter((artist) => artist.name === originalName);
-  console.log(artistInfo);
+  //let { name, members, genre, logoCredits, logo, bio   = artistInfo[0];}
+
+  if (artist !== "") {
+    artistInfo = artist.filter((artist) => artist.name === originalName);
+    console.log(artist);
+    //object destructering
+
+    memberList = artistInfo[0].members.map((m) => {
+      return <h3 key={m}>{m}</h3>;
+    });
+    console.log(memberList);
+  }
+
   return (
     <main>
-      <h1></h1>
-      <h2></h2>
-      <img src="" alt="" />
-      <p></p>
+      {artist !== "" ? <h1>{artistInfo[0].name}</h1> : null}
+
+      <h3>Members: </h3>
+      {artist !== "" ? <h3> {artistInfo[0].members}</h3> : null}
+
+      {artist !== "" ? (
+        <img
+          className="artist-info-img"
+          src={
+            !artistInfo[0].logo.includes("http")
+              ? `https://hwaiting.herokuapp.com/logos/${artistInfo[0].logo}`
+              : artistInfo[0].logo
+          }
+          alt="bandimage"
+        />
+      ) : null}
+      {artist !== "" ? <p>{artistInfo[0].logoCredits}</p> : null}
+      {artist !== "" ? <h3>{artistInfo[0].genre}</h3> : null}
+      {artist !== "" ? <p>{artistInfo[0].bio}</p> : null}
     </main>
   );
 }
