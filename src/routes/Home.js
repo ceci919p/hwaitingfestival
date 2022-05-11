@@ -1,3 +1,19 @@
+import heroImg from "../images/heroimg2.jpg";
+import { Link } from "react-router-dom";
+
 export default function Home() {
-  return <h1>Home</h1>;
+  return (
+    <main id="main-landing" style={{ backgroundImage: `url(${heroImg})` }}>
+      <h1>HWAITING PROGRAM</h1>;
+      {/*      <img src={heroImg} alt="BigCo Inc. logo" /> */}
+      <div id="landing-buttons">
+        <Link className="landing-button" to="/Artists">
+          See Artists
+        </Link>
+        <Link className="landing-button" to="/Schedule">
+          See Schedule
+        </Link>
+      </div>
+    </main>
+  );
 }

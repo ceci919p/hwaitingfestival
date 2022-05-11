@@ -1,0 +1,40 @@
+//@use "../abstracts/vars";
+
+h1 {
+  //font-family: vars.$displayfont;
+  font-size: 5rem;
+  font-weight: 200;
+  color: white;
+  //color: vars.$secondary;
+}
+
+h2 {
+  //font-family:
+  font-weight: 200;
+  font-size: 3rem;
+}
+
+h3 {
+  //font-family: vars.$paragraphfont;
+  font-size: 1.8rem;
+}
+
+h4 {
+  //font-family: vars.$paragraphfont;
+  font-size: 1.2rem;
+  // color: vars.$secondary;
+}
+
+p {
+  // font-family: vars.$paragraphfont;
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+  //  color: vars.$secondary;
+}
+
+a {
+  // font-family: vars.$paragraphfont;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+}

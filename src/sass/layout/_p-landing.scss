@@ -1,0 +1,33 @@
+@use "../abstracts/vars";
+@use "../abstracts/mixins";
+
+#main-landing {
+  background-size: cover;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: grid;
+  z-index: -1;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+#landing-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.landing-button {
+  border: 1px solid darkviolet;
+  background-color: black;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  cursor: pointer;
+  min-width: 8rem;
+  text-align: center;
+}
