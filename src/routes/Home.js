@@ -7,11 +7,11 @@ export default function Home() {
       <h1>HWAITING PROGRAM</h1>;
       {/*      <img src={heroImg} alt="BigCo Inc. logo" /> */}
       <div id="landing-buttons">
-        <Link className="landing-button" to="/Artists">
+        <Link id="artist-button" className="landing-button" to="/artists">
           See Artists
         </Link>
-        <Link className="landing-button" to="/Schedule">
-          See Schedule
+        <Link id="program-button" className="landing-button" to="/program">
+          See Program
         </Link>
       </div>
     </main>

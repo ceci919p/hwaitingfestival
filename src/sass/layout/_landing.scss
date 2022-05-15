@@ -1,6 +1,10 @@
 @use "../abstracts/vars";
 @use "../abstracts/mixins";
 
+body {
+  background-color: vars.$background-blue;
+}
+
 #main-landing {
   background-size: cover;
   position: absolute;
@@ -22,11 +26,19 @@
 }
 
 .landing-button {
-  border: 1px solid darkviolet;
-  background-color: black;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 5px;
   padding-block: 0.5rem;
   padding-inline: 1rem;
   cursor: pointer;
-  min-width: 8rem;
+  min-width: 10rem;
   text-align: center;
+}
+
+#artist-button {
+  @include mixins.blue-button;
+}
+
+#program-button {
+  @include mixins.pink-button;
 }

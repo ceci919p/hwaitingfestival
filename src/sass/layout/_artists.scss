@@ -1,12 +1,24 @@
 @use "../abstracts/vars";
 @use "../abstracts/mixins";
 
+#artists-header {
+  min-height: 60vh;
+  text-align: center;
+  display: grid;
+  align-content: center;
+
+  h1 {
+    margin-bottom: 4rem;
+  }
+}
+
 #Artistlist {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   justify-content: center;
   align-content: center;
   gap: 4rem;
+  margin-top: 6rem;
 }
 
 .artist-card {

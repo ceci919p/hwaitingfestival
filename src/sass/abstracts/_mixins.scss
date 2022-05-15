@@ -1,3 +1,5 @@
+@use "../abstracts/vars";
+
 @mixin bp-medium {
   @media only screen and (min-width: 760px) {
     @content;
@@ -20,4 +22,14 @@
   @media only screen and (min-width: 1500px) {
     @content;
   }
+}
+
+@mixin blue-button {
+  border: 5px solid vars.$neonblue;
+  box-shadow: 0px 0px 22px vars.$lightneonblue;
+}
+
+@mixin pink-button {
+  border: 5px solid vars.$neonpink;
+  box-shadow: 0px 0px 22px vars.$lightneonpink;
 }

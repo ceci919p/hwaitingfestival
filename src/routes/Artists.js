@@ -21,11 +21,12 @@ function Artists() {
   );
 
   return (
-    <main>
-      <header>
+    <main id="artists-main">
+      <header id="artists-header">
         <h1>Artists</h1>
+        <hr></hr>
       </header>
-      ;<ArtistList artists={artists}></ArtistList>
+      <ArtistList artists={artists}></ArtistList>
     </main>
   );
 }
