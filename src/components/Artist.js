@@ -23,7 +23,7 @@ export default function Artist(props) {
         className="artist-card-img"
         src={
           !props.artist.logo.includes("http")
-            ? `https://hwaiting.herokuapp.com/logos/${props.artist.logo}`
+            ? `https://hwaiting.herokuapp.com/${props.artist.logo}`
             : props.artist.logo
         }
         alt="artist img"
