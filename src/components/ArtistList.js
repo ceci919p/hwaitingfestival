@@ -5,6 +5,7 @@ export default function ArtistList({
   artists,
   dayFilter,
   genreFilter,
+  searchInput,
   sort,
   setSort,
   sortDir,
@@ -34,9 +35,19 @@ export default function ArtistList({
       ? dayFilterData
       : dayFilterData.filter((artist) => artist.genre === genreFilter);
 
+  //search filter
+
+  let searchedFilter = filteredArtists.filter((val) => {
+    if (searchInput === "") {
+      return val;
+    } else if (val.name.toLowerCase().includes(searchInput.toLowerCase())) {
+      return val;
+    }
+  });
+
   //sorting
   //making copy since sort is destructive
-  let copySortedArtists = JSON.parse(JSON.stringify(filteredArtists));
+  let copySortedArtists = JSON.parse(JSON.stringify(searchedFilter));
   //sort funktion
   function compare(a, b) {
     //lowercase to make sorting caseinsensitive

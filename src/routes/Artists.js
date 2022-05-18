@@ -7,6 +7,7 @@ function Artists() {
   const [schedule, setSchedule] = useState([]);
   const [dayFilter, setDayFilter] = useState("All Days");
   const [genreFilter, setGenreFilter] = useState("");
+  const [searchInput, setSearchInput] = useState("");
   const [sort, setSort] = useState("name");
   const [sortDir, setSortDir] = useState("asc");
   //const [fullArtistList, setFullArtistList] = useState(makeList(artists, schedule))
@@ -74,6 +75,7 @@ function Artists() {
       <FilterOptions
         setDayFilter={setDayFilter}
         setGenreFilter={setGenreFilter}
+        setSearchInput={setSearchInput}
         setSortDir={setSortDir}
         sortDir={sortDir}
       ></FilterOptions>
@@ -82,6 +84,7 @@ function Artists() {
         artists={artists}
         dayFilter={dayFilter}
         genreFilter={genreFilter}
+        searchInput={searchInput}
         sort={sort}
         setSort={setSort}
         sortDir={sortDir}
