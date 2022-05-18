@@ -36,13 +36,14 @@ export default function ArtistList({
       : dayFilterData.filter((artist) => artist.genre === genreFilter);
 
   //search filter
-
-  let searchedFilter = filteredArtists.filter((val) => {
+  let searchedFilter = [];
+  filteredArtists.filter((val) => {
     if (searchInput === "") {
-      return val;
+      searchedFilter.push(val);
     } else if (val.name.toLowerCase().includes(searchInput.toLowerCase())) {
-      return val;
+      searchedFilter.push(val);
     }
+    return searchedFilter;
   });
 
   //sorting
