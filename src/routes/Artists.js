@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import ArtistList from "../components/ArtistList";
+import FilterOptions from "../components/FilterOptions";
 
 function Artists() {
   const [artists, setArtists] = useState([]);
   const [schedule, setSchedule] = useState([]);
-  const [dayFilter, setDayFilter] = useState("wed");
-  const [genreFilter, setGenreFilter] = useState("Boy group");
+  const [dayFilter, setDayFilter] = useState("All Days");
+  const [genreFilter, setGenreFilter] = useState("");
+  const [sort, setSort] = useState("name");
+  const [sortDir, setSortDir] = useState("asc");
   //const [fullArtistList, setFullArtistList] = useState(makeList(artists, schedule))
   //navn på array - det er det der er state, navn på funktion - det skal kalde state (rebuilde)
 
@@ -68,11 +71,20 @@ function Artists() {
         <h1>Artists</h1>
         <hr></hr>
       </header>
+      <FilterOptions
+        setDayFilter={setDayFilter}
+        setGenreFilter={setGenreFilter}
+        setSortDir={setSortDir}
+        sortDir={sortDir}
+      ></FilterOptions>
       <ArtistList
         schedule={schedule}
         artists={artists}
         dayFilter={dayFilter}
         genreFilter={genreFilter}
+        sort={sort}
+        setSort={setSort}
+        sortDir={sortDir}
       ></ArtistList>
     </main>
   );
