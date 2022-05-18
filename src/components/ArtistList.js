@@ -1,26 +1,37 @@
 import Artist from "./Artist";
 
-export default function ArtistList({ schedule, artists, dayFilter }) {
+export default function ArtistList({
+  schedule,
+  artists,
+  dayFilter,
+  genreFilter,
+}) {
   //console.log(schedule[0].day);
   let filteredSchedule = [];
   schedule.forEach((day) => {
     console.log(day.day);
-    if (day.day === dayFilter || dayFilter === "all") {
+    if (day.day === dayFilter || dayFilter === "") {
       filteredSchedule.push(day);
     }
   });
-  const filterData = [];
+  const dayFilterData = [];
   artists.forEach((band) => {
     filteredSchedule.forEach((schedule) => {
       if (band.name.includes(schedule.act)) {
-        filterData.push(band);
+        dayFilterData.push(band);
       }
     });
   });
+  const filteredArtists =
+    genreFilter === ""
+      ? dayFilterData
+      : dayFilterData.filter((artist) => artist.genre === genreFilter);
 
-  //const filte
+  //const genreFilterData = [];
 
-  const artistsList = filterData.map((a) => <Artist key={a.name} artist={a} />);
+  const artistsList = filteredArtists.map((a) => (
+    <Artist key={a.name} artist={a} />
+  ));
 
   return <section id="Artistlist">{artistsList}</section>;
 }

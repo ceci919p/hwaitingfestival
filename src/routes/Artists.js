@@ -4,8 +4,8 @@ import ArtistList from "../components/ArtistList";
 function Artists() {
   const [artists, setArtists] = useState([]);
   const [schedule, setSchedule] = useState([]);
-  const [dayFilter, setDayFilter] = useState("all");
-  const [genreFilter, setGenreFilter] = useState("all");
+  const [dayFilter, setDayFilter] = useState("wed");
+  const [genreFilter, setGenreFilter] = useState("Boy group");
   //const [fullArtistList, setFullArtistList] = useState(makeList(artists, schedule))
   //navn på array - det er det der er state, navn på funktion - det skal kalde state (rebuilde)
 
