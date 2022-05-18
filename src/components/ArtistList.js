@@ -7,7 +7,6 @@ export default function ArtistList({
   genreFilter,
   searchInput,
   sort,
-  setSort,
   sortDir,
 }) {
   //finding the days that match whatever the filter is and put them in array
