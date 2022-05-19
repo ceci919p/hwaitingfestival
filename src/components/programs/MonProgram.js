@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function MonProgram({ cleanSchedule }) {
   // console.log(schedule);
 
@@ -22,9 +24,15 @@ export default function MonProgram({ cleanSchedule }) {
 
   monMid.forEach((a) => {
     monMidList.push(
-      <li key={a.act}>
-        {a.act} {a.start}
-      </li>
+      <Link
+        key={a.act}
+        /* regex s is spaces, flag: g global and looks through whole string, "" is what we want to replace it with >nothing<  */
+        to={`/artists/${a.act.replace(/\s+/g, "+")}`}
+      >
+        <li>
+          {a.act} {a.start}
+        </li>
+      </Link>
     );
   });
 
@@ -33,9 +41,15 @@ export default function MonProgram({ cleanSchedule }) {
 
   monVan.forEach((a) => {
     monVanList.push(
-      <li key={a.act}>
-        {a.act} {a.start}
-      </li>
+      <Link
+        key={a.act}
+        /* regex s is spaces, flag: g global and looks through whole string, "" is what we want to replace it with >nothing<  */
+        to={`/artists/${a.act.replace(/\s+/g, "+")}`}
+      >
+        <li>
+          {a.act} {a.start}
+        </li>
+      </Link>
     );
   });
 
@@ -44,9 +58,15 @@ export default function MonProgram({ cleanSchedule }) {
 
   monJot.forEach((a) => {
     monJotnList.push(
-      <li key={a.act}>
-        {a.act} {a.start}
-      </li>
+      <Link
+        key={a.act}
+        /* regex s is spaces, flag: g global and looks through whole string, "" is what we want to replace it with >nothing<  */
+        to={`/artists/${a.act.replace(/\s+/g, "+")}`}
+      >
+        <li>
+          {a.act} {a.start}
+        </li>
+      </Link>
     );
   });
 
