@@ -46,7 +46,7 @@ export default function SingleArtist() {
           className="artist-info-img"
           src={
             !artistInfo[0].logo.includes("http")
-              ? `https://hwaiting.herokuapp.com/logos/${artistInfo[0].logo}`
+              ? `https://hwaiting.herokuapp.com/${artistInfo[0].logo}`
               : artistInfo[0].logo
           }
           alt="bandimage"
