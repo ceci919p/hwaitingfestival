@@ -29,12 +29,10 @@ export default function MonProgram({ cleanSchedule }) {
         /* regex s is spaces, flag: g global and looks through whole string, "" is what we want to replace it with >nothing<  */
         to={`/artists/${a.act.replace(/\s+/g, "+")}`}
       >
-        <li>
-          <h3>{a.act}</h3>
-          <h4>
-            {a.stage} - {a.start}
-          </h4>
-        </li>
+        <h3>{a.act}</h3>
+        <h4>
+          {a.stage} - {a.start}
+        </h4>
       </Link>
     );
   });

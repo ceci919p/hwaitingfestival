@@ -31,8 +31,8 @@
     font-weight: 600;
     font-style: italic;
     letter-spacing: 1px;
+
     //margin-block: 6rem 0.2rem;
-    margin-block: 4rem 0.2rem;
   }
   h4 {
     // color: vars.$background-blue;
@@ -40,6 +40,11 @@
     font-weight: 400;
     font-style: italic;
     letter-spacing: 0.8px;
+  }
+  a {
+    display: grid;
+    margin-block: 4rem 0.2rem;
+    transition: all 0.2s ease-in-out;
   }
 }
 .scene-container {
@@ -51,8 +56,13 @@
 
 .scene-article {
   @include mixins.bp-large {
-    width: 24rem;
+    width: 18rem;
   }
+}
+
+.program-listitem,
+.program-listitem_2 {
+  display: inline-block;
 }
 
 .monday-section {
@@ -73,17 +83,29 @@
   }
   a {
     color: vars.$lightpink;
+
+    &:hover {
+      color: vars.$neonpink;
+    }
   }
 
   .program-listitem {
     a:nth-child(odd) {
       color: white;
+
+      &:hover {
+        color: vars.$neonpink;
+      }
     }
   }
 
   .program-listitem_2 {
     a:nth-child(even) {
       color: white;
+
+      &:hover {
+        color: vars.$neonpink;
+      }
     }
   }
 }
@@ -106,17 +128,29 @@
   }
   a {
     color: vars.$lightred;
+
+    &:hover {
+      color: vars.$neonred;
+    }
   }
 
   .program-listitem {
     a:nth-child(odd) {
       color: white;
+
+      &:hover {
+        color: vars.$neonred;
+      }
     }
   }
 
   .program-listitem_2 {
     a:nth-child(even) {
       color: white;
+
+      &:hover {
+        color: vars.$neonred;
+      }
     }
   }
 }
@@ -139,16 +173,25 @@
   }
   a {
     color: vars.$lightorange;
+    &:hover {
+      color: vars.$neonorange;
+    }
   }
 
   .program-listitem {
     a:nth-child(odd) {
       color: white;
+      &:hover {
+        color: vars.$neonorange;
+      }
     }
   }
 
   .program-listitem_2 {
     a:nth-child(even) {
+      &:hover {
+        color: vars.$neonorange;
+      }
       color: white;
     }
   }
@@ -172,17 +215,27 @@
   }
   a {
     color: vars.$lightyellow;
+
+    &:hover {
+      color: vars.$neonyellow;
+    }
   }
 
   .program-listitem {
     a:nth-child(odd) {
       color: white;
+      &:hover {
+        color: vars.$neonyellow;
+      }
     }
   }
 
   .program-listitem_2 {
     a:nth-child(even) {
       color: white;
+      &:hover {
+        color: vars.$neonyellow;
+      }
     }
   }
 }
@@ -205,17 +258,26 @@
   }
   a {
     color: vars.$lightgreen;
+    &:hover {
+      color: vars.$neongreen;
+    }
   }
 
   .program-listitem {
     a:nth-child(odd) {
       color: white;
+      &:hover {
+        color: vars.$neongreen;
+      }
     }
   }
 
   .program-listitem_2 {
     a:nth-child(even) {
       color: white;
+      &:hover {
+        color: vars.$neongreen;
+      }
     }
   }
 }
@@ -238,17 +300,26 @@
   }
   a {
     color: vars.$lightblue;
+    &:hover {
+      color: vars.$neonblue;
+    }
   }
 
   .program-listitem {
     a:nth-child(odd) {
       color: white;
+      &:hover {
+        color: vars.$neonblue;
+      }
     }
   }
 
   .program-listitem_2 {
     a:nth-child(even) {
       color: white;
+      &:hover {
+        color: vars.$neonblue;
+      }
     }
   }
 }
@@ -271,17 +342,26 @@
   }
   a {
     color: vars.$lightpurple;
+    &:hover {
+      color: vars.$neonpurple;
+    }
   }
 
   .program-listitem {
     a:nth-child(odd) {
       color: white;
+      &:hover {
+        color: vars.$neonpurple;
+      }
     }
   }
 
   .program-listitem_2 {
     a:nth-child(even) {
       color: white;
+      &:hover {
+        color: vars.$neonpurple;
+      }
     }
   }
 }
