@@ -9,6 +9,13 @@ import SunProgram from "../components/programs/SunProgram";
 
 export default function Program(props) {
   //console.log(props.schedule);
+  let cleanSchedule = [];
+  //fjerner breaks fra schedule
+  props.schedule.forEach((e) => {
+    if (e.act !== "break") {
+      cleanSchedule.push(e);
+    }
+  });
 
   return (
     <main id="program-main">
@@ -16,14 +23,14 @@ export default function Program(props) {
         <h1>Program</h1>
         <hr></hr>
       </header>
-      <ProgramNav schedule={props.schedule}></ProgramNav>
-      <MonProgram schedule={props.schedule}></MonProgram>
-      <TueProgram schedule={props.schedule}></TueProgram>
-      <WedProgram schedule={props.schedule}></WedProgram>
-      <ThuProgram schedule={props.schedule}></ThuProgram>
-      <FriProgram schedule={props.schedule}></FriProgram>
-      <SatProgram schedule={props.schedule}></SatProgram>
-      <SunProgram schedule={props.schedule}></SunProgram>
+      <ProgramNav cleanSchedule={cleanSchedule}></ProgramNav>
+      <MonProgram cleanSchedule={cleanSchedule}></MonProgram>
+      <TueProgram cleanSchedule={cleanSchedule}></TueProgram>
+      <WedProgram cleanSchedule={cleanSchedule}></WedProgram>
+      <ThuProgram cleanSchedule={cleanSchedule}></ThuProgram>
+      <FriProgram cleanSchedule={cleanSchedule}></FriProgram>
+      <SatProgram cleanSchedule={cleanSchedule}></SatProgram>
+      <SunProgram cleanSchedule={cleanSchedule}></SunProgram>
     </main>
   );
 }

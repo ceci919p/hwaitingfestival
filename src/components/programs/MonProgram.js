@@ -1,6 +1,6 @@
 import MonStage from "./dayStages/MonStages";
 
-export default function MonProgram({ schedule }) {
+export default function MonProgram({ cleanSchedule }) {
   // console.log(schedule);
 
   //new array of all the stages
@@ -31,10 +31,7 @@ export default function MonProgram({ schedule }) {
   return (
     <section>
       <h2>Monday 8/8</h2>
-      <MonStage schedule={schedule}></MonStage>
-      {/*      {cleanStages.map((band) => {
-        return <MonStage cleanStages={cleanStages} />;
-      })} */}
+      <MonStage cleanSchedule={cleanSchedule}></MonStage>
     </section>
   );
 }

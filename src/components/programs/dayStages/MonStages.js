@@ -1,57 +1,69 @@
-export default function MonStages({ schedule }) {
+export default function MonStages({ cleanSchedule }) {
   //console.log(schedule);
 
-  let cleanSchedule = [];
-  //fjerner breaks fra schedule
-  schedule.forEach((e) => {
-    if (e.act !== "break") {
-      cleanSchedule.push(e);
-    }
-  });
-
+  //filter to my desired stages
   let monMid = [];
   let monVan = [];
-  let monJon = [];
+  let monJot = [];
 
-  let monMidList = [];
-
-  //get my acts on monday on desired stages
-  monMid = cleanSchedule.filter(
-    (act) => act.stage === "Midgard" && act.day === "mon"
-  );
-  monMid.forEach((a) => {
-    monMidList.push(
-      <li>
-        {a.act} {a.start}
-      </li>
-    );
-  });
-
-  console.log(monMidList);
-
-  /*   cleanSchedule.forEach((el) => {
+  cleanSchedule.forEach((el) => {
     if (el.stage === "Midgard" && el.day === "mon") {
       monMid.push(el);
     } else if (el.stage === "Vanaheim" && el.day === "mon") {
       monVan.push(el);
     } else if (el.stage === "Jotunheim" && el.day === "mon") {
-      monJon.push(el);
+      monJot.push(el);
     }
   });
 
+  //making my list items
+  //midgard
   let monMidList = [];
-  monMid.forEach((m) => {
-    monMidList.push(<h3 key={m.name}>{m.name}</h3>);
+
+  monMid.forEach((a) => {
+    monMidList.push(
+      <li key={a.name}>
+        {a.act} {a.start}
+      </li>
+    );
   });
-  console.log(monMid[0]);
- */
+
+  //vanaheim
+  let monVanList = [];
+
+  monVan.forEach((a) => {
+    monVanList.push(
+      <li key={a.name}>
+        {a.act} {a.start}
+      </li>
+    );
+  });
+
+  //Jotunheim
+  let monJotnList = [];
+
+  monJot.forEach((a) => {
+    monJotnList.push(
+      <li key={a.name}>
+        {a.act} {a.start}
+      </li>
+    );
+  });
 
   return (
     <>
       <article>
+        <h3>Midgard</h3>
         <ul>{monMidList}</ul>
       </article>
-      <article></article> <article></article>
+      <article>
+        <h3>Vanaheim</h3>
+        <ul>{monVanList}</ul>
+      </article>
+      <article>
+        <h3>Jotunheim</h3>
+        <ul>{monJotnList}</ul>
+      </article>
     </>
   );
 }
