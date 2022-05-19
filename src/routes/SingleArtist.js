@@ -28,7 +28,7 @@ export default function SingleArtist() {
 
   if (artist !== "") {
     artistInfo = artist.filter((artist) => artist.name === originalName);
-    console.log(artistInfo[0]);
+    //console.log(artistInfo[0]);
     artistInfo[0].members.forEach((m) => {
       memberList.push(<h3 key={m}>{m}</h3>);
     });

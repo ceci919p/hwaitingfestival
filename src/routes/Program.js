@@ -8,7 +8,7 @@ import SatProgram from "../components/programs/SatProgram";
 import SunProgram from "../components/programs/SunProgram";
 
 export default function Program(props) {
-  console.log(props.schedule);
+  //console.log(props.schedule);
 
   return (
     <main id="program-main">
@@ -16,14 +16,14 @@ export default function Program(props) {
         <h1>Program</h1>
         <hr></hr>
       </header>
-      <ProgramNav></ProgramNav>
-      <MonProgram></MonProgram>
-      <TueProgram></TueProgram>
-      <WedProgram></WedProgram>
-      <ThuProgram></ThuProgram>
-      <FriProgram></FriProgram>
-      <SatProgram></SatProgram>
-      <SunProgram></SunProgram>
+      <ProgramNav schedule={props.schedule}></ProgramNav>
+      <MonProgram schedule={props.schedule}></MonProgram>
+      <TueProgram schedule={props.schedule}></TueProgram>
+      <WedProgram schedule={props.schedule}></WedProgram>
+      <ThuProgram schedule={props.schedule}></ThuProgram>
+      <FriProgram schedule={props.schedule}></FriProgram>
+      <SatProgram schedule={props.schedule}></SatProgram>
+      <SunProgram schedule={props.schedule}></SunProgram>
     </main>
   );
 }
