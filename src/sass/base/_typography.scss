@@ -3,7 +3,8 @@
 
 h1 {
   font-family: vars.$displayfont;
-  font-size: 3rem;
+  font-size: 4rem;
+  text-align: center;
   @include mixins.bp-medium {
     font-size: 5rem;
   }
@@ -29,14 +30,11 @@ h3 {
   @include mixins.bp-medium {
     font-size: 1.8rem;
   }
-  color: white;
 }
 
 h4 {
   font-family: vars.$paragraphfont;
   font-size: 1.2rem;
-
-  color: white;
   // color: vars.$secondary;
 }
 

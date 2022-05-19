@@ -30,7 +30,10 @@ export default function MonProgram({ cleanSchedule }) {
         to={`/artists/${a.act.replace(/\s+/g, "+")}`}
       >
         <li>
-          {a.act} {a.start}
+          <h3>{a.act}</h3>
+          <h4>
+            {a.stage} - {a.start}
+          </h4>
         </li>
       </Link>
     );
@@ -47,44 +50,50 @@ export default function MonProgram({ cleanSchedule }) {
         to={`/artists/${a.act.replace(/\s+/g, "+")}`}
       >
         <li>
-          {a.act} {a.start}
+          <h3>{a.act}</h3>
+          <h4>
+            {a.stage} - {a.start}
+          </h4>
         </li>
       </Link>
     );
   });
 
   //Jotunheim
-  let monJotnList = [];
+  let monJotList = [];
 
   monJot.forEach((a) => {
-    monJotnList.push(
+    monJotList.push(
       <Link
         key={a.act}
         /* regex s is spaces, flag: g global and looks through whole string, "" is what we want to replace it with >nothing<  */
         to={`/artists/${a.act.replace(/\s+/g, "+")}`}
       >
         <li>
-          {a.act} {a.start}
+          <h3>{a.act}</h3>
+          <h4>
+            {a.stage} - {a.start}
+          </h4>
         </li>
       </Link>
     );
   });
 
   return (
-    <section>
+    <section id="monday-section" className="day-section monday-section">
       <h2>Monday 8/8</h2>
-      <article>
-        <h3>Midgard</h3>
-        <ul>{monMidList}</ul>
-      </article>
-      <article>
-        <h3>Vanaheim</h3>
-        <ul>{monVanList}</ul>
-      </article>
-      <article>
-        <h3>Jotunheim</h3>
-        <ul>{monJotnList}</ul>
-      </article>
+      <hr></hr>
+      <div className="scene-container">
+        <article className="scene-article">
+          <ul className="program-listitem">{monMidList}</ul>
+        </article>
+        <article className="scene-article">
+          <ul className="program-listitem_2">{monVanList}</ul>
+        </article>
+        <article className="scene-article">
+          <ul className="program-listitem">{monJotList}</ul>
+        </article>
+      </div>
     </section>
   );
 }

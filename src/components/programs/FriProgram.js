@@ -28,7 +28,10 @@ export default function FriProgram({ cleanSchedule }) {
         to={`/artists/${a.act.replace(/\s+/g, "+")}`}
       >
         <li>
-          {a.act} {a.start}
+          <h3>{a.act}</h3>
+          <h4>
+            {a.stage} - {a.start}
+          </h4>
         </li>
       </Link>
     );
@@ -45,44 +48,50 @@ export default function FriProgram({ cleanSchedule }) {
         to={`/artists/${a.act.replace(/\s+/g, "+")}`}
       >
         <li>
-          {a.act} {a.start}
+          <h3>{a.act}</h3>
+          <h4>
+            {a.stage} - {a.start}
+          </h4>
         </li>
       </Link>
     );
   });
 
   //Jotunheim
-  let friJotnList = [];
+  let friJotList = [];
 
   friJot.forEach((a) => {
-    friJotnList.push(
+    friJotList.push(
       <Link
         key={a.act}
         /* regex s is spaces, flag: g global and looks through whole string, "" is what we want to replace it with >nothing<  */
         to={`/artists/${a.act.replace(/\s+/g, "+")}`}
       >
         <li>
-          {a.act} {a.start}
+          <h3>{a.act}</h3>
+          <h4>
+            {a.stage} - {a.start}
+          </h4>
         </li>
       </Link>
     );
   });
 
   return (
-    <section>
+    <section id="friday-section" className="day-section friday-section">
       <h2>Friday 12/8</h2>
-      <article>
-        <h3>Midgard</h3>
-        <ul>{friMidList}</ul>
-      </article>
-      <article>
-        <h3>Vanaheim</h3>
-        <ul>{friVanList}</ul>
-      </article>
-      <article>
-        <h3>Jotunheim</h3>
-        <ul>{friJotnList}</ul>
-      </article>
+      <hr></hr>
+      <div className="scene-container">
+        <article className="scene-article">
+          <ul className="program-listitem">{friMidList}</ul>
+        </article>
+        <article className="scene-article">
+          <ul className="program-listitem_2">{friVanList}</ul>
+        </article>
+        <article className="scene-article">
+          <ul className="program-listitem">{friJotList}</ul>
+        </article>
+      </div>
     </section>
   );
 }
