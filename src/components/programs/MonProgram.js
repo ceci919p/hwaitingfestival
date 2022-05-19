@@ -1,37 +1,70 @@
-import MonStage from "./dayStages/MonStages";
-
 export default function MonProgram({ cleanSchedule }) {
   // console.log(schedule);
 
-  //new array of all the stages
-  /*   const allStages = schedule.map((el) => ({
-    name: el.stage,
-  }));
+  //filter to my desired stages
+  let monMid = [];
+  let monVan = [];
+  let monJot = [];
 
-  //gives array with filtered scene names
-  let uniStage = [];
-
-  //gives array with obj name: stage
-  let cleanStages = allStages.filter((element) => {
-    if (!uniStage.includes(element.name)) {
-      uniStage.push(element.name);
-
-      return true;
+  cleanSchedule.forEach((el) => {
+    if (el.stage === "Midgard" && el.day === "mon") {
+      monMid.push(el);
+    } else if (el.stage === "Vanaheim" && el.day === "mon") {
+      monVan.push(el);
+    } else if (el.stage === "Jotunheim" && el.day === "mon") {
+      monJot.push(el);
     }
-    return false;
-  }); */
+  });
 
-  /*   let cleanStages = allStages.filter((element) => {
-    if (!uniStage.includes(element.name)) {
-      uniStage.push(element.name); */
+  //making my list items
+  //midgard
+  let monMidList = [];
 
-  //return array or object with scenes
-  //om that article make new list
+  monMid.forEach((a) => {
+    monMidList.push(
+      <li key={a.act}>
+        {a.act} {a.start}
+      </li>
+    );
+  });
+
+  //vanaheim
+  let monVanList = [];
+
+  monVan.forEach((a) => {
+    monVanList.push(
+      <li key={a.act}>
+        {a.act} {a.start}
+      </li>
+    );
+  });
+
+  //Jotunheim
+  let monJotnList = [];
+
+  monJot.forEach((a) => {
+    monJotnList.push(
+      <li key={a.act}>
+        {a.act} {a.start}
+      </li>
+    );
+  });
 
   return (
     <section>
       <h2>Monday 8/8</h2>
-      <MonStage cleanSchedule={cleanSchedule}></MonStage>
+      <article>
+        <h3>Midgard</h3>
+        <ul>{monMidList}</ul>
+      </article>
+      <article>
+        <h3>Vanaheim</h3>
+        <ul>{monVanList}</ul>
+      </article>
+      <article>
+        <h3>Jotunheim</h3>
+        <ul>{monJotnList}</ul>
+      </article>
     </section>
   );
 }
