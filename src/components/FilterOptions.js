@@ -1,7 +1,7 @@
-import GenreFilter from "../components/GenreFilter";
-import DayFilter from "../components/DayFilter";
-import Sorting from "../components/Sorting";
-import SearchFilter from "../components/SearchFilter";
+import GenreFilter from "../components/artistfilters/GenreFilter";
+import DayFilter from "../components//artistfilters/DayFilter";
+import Sorting from "../components/artistfilters/Sorting";
+import SearchFilter from "../components/artistfilters/SearchFilter";
 
 export default function FilterOptions({
   setDayFilter,

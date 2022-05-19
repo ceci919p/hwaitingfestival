@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import ArtistList from "../components/ArtistList";
 import FilterOptions from "../components/FilterOptions";
 
-function Artists() {
+function Artists(props) {
   const [artists, setArtists] = useState([]);
-  const [schedule, setSchedule] = useState([]);
   const [dayFilter, setDayFilter] = useState("All Days");
   const [genreFilter, setGenreFilter] = useState("");
   const [searchInput, setSearchInput] = useState("");
@@ -28,44 +27,6 @@ function Artists() {
     ]
   );
 
-  useEffect(
-    () => {
-      //use effect gør at den kun kalder en enkelt gang, ellers ville den loope, da man ville kalde funktionen getproducts data(array) ville ændre sig og derved kalde setproducts igen
-      async function getSchedule() {
-        const resS = await fetch("https://hwaiting.herokuapp.com/schedule");
-        const scheduleData = await resS.json();
-
-        const flatArray = [];
-
-        for (const stage in scheduleData) {
-          //console.log(`${stage}: ${scheduleData[stage]}`);
-          //mit array af stages:
-          let stageName = stage;
-
-          //stageData: 3 objekter(stages) med hver 7 objekter som hver har et array med acts
-          const stageData = scheduleData[stageName];
-
-          for (let day in stageData) {
-            //objDay: arrays med acts i (objekter)
-            const dayData = stageData[day];
-
-            for (const obj in dayData) {
-              //bandAct: alle mine bandact objekter
-              const bandAct = dayData[obj];
-              flatArray.push({ ...bandAct, day, stage });
-            }
-          }
-        }
-
-        setSchedule(flatArray);
-      }
-      getSchedule();
-    },
-    [
-      //tomt array hvor man kan putte variables ind som hvis ændrede sig ville køre funktionen igen
-    ]
-  );
-
   return (
     <main id="artists-main">
       <header id="artists-header">
@@ -80,7 +41,7 @@ function Artists() {
         sortDir={sortDir}
       ></FilterOptions>
       <ArtistList
-        schedule={schedule}
+        schedule={props.schedule}
         artists={artists}
         dayFilter={dayFilter}
         genreFilter={genreFilter}

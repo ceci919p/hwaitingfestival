@@ -1,3 +1,29 @@
-export default function Program() {
-  return <h1>Program</h1>;
+import ProgramNav from "../components/ProgramNav";
+import MonProgram from "../components/programs/MonProgram";
+import TueProgram from "../components/programs/TueProgram";
+import WedProgram from "../components/programs/WedProgram";
+import ThuProgram from "../components/programs/ThuProgram";
+import FriProgram from "../components/programs/FriProgram";
+import SatProgram from "../components/programs/SatProgram";
+import SunProgram from "../components/programs/SunProgram";
+
+export default function Program(props) {
+  console.log(props.schedule);
+
+  return (
+    <main id="program-main">
+      <header id="program-header">
+        <h1>Program</h1>
+        <hr></hr>
+      </header>
+      <ProgramNav></ProgramNav>
+      <MonProgram></MonProgram>
+      <TueProgram></TueProgram>
+      <WedProgram></WedProgram>
+      <ThuProgram></ThuProgram>
+      <FriProgram></FriProgram>
+      <SatProgram></SatProgram>
+      <SunProgram></SunProgram>
+    </main>
+  );
 }
