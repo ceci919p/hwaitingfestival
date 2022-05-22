@@ -11,7 +11,7 @@ export default function FilterOptions({
   sortDir,
 }) {
   return (
-    <section>
+    <section id="filter-section">
       <GenreFilter setGenreFilter={setGenreFilter}></GenreFilter>
       <DayFilter setDayFilter={setDayFilter}></DayFilter>
       <SearchFilter setSearchInput={setSearchInput}></SearchFilter>

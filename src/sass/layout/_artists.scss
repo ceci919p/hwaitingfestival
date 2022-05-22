@@ -5,33 +5,68 @@
   overflow: hidden;
 }
 
+//HEADER
 #artists-header {
-  min-height: 60vh;
+  min-height: 40vh;
   text-align: center;
   display: grid;
   align-content: center;
+  border-bottom: 3px solid vars.$white;
+  box-shadow: 0px 0px 6px 4px vars.$white;
 
-  h1 {
-    margin-bottom: 4rem;
+  @include mixins.bp-medium {
+    min-height: 50vh;
   }
 }
 
+//FILTER OPTIONS
+#filter-section {
+  margin-block: 2rem 2rem;
+}
+
+//genre filter
+#genre-filter {
+  margin-block: 1rem 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+
+  @include mixins.bp-large {
+    //justify-content: space-between;
+  }
+}
+
+.genre-filter-button {
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem 0.8rem 1rem;
+  border: 2px solid vars.$neonblue;
+  box-shadow: 0px 0px 6px 2px vars.$lightneonblue;
+  width: 10rem;
+  font-size: 1rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+//day filter
+
+//ARTIST LIST
 #Artistlist {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  gap: 4rem;
+  gap: 1rem;
   margin-top: 6rem;
+  margin-inline: auto;
 }
 
 .artist-card {
-  background-color: lightcoral;
-  border: 1px solid hotpink;
+  border-radius: 5px;
   cursor: pointer;
   text-align: center;
-  max-width: 400px;
-  max-height: 300px;
+  width: 400px;
+  height: 250px;
   position: relative;
 }
 

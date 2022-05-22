@@ -31,7 +31,6 @@ function Artists(props) {
     <main id="artists-main">
       <header id="artists-header">
         <h1>Artists</h1>
-        <hr></hr>
       </header>
       <FilterOptions
         setDayFilter={setDayFilter}
