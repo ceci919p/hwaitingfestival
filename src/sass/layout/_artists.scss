@@ -1,6 +1,10 @@
 @use "../abstracts/vars";
 @use "../abstracts/mixins";
 
+#artists-main {
+  overflow: hidden;
+}
+
 #artists-header {
   min-height: 60vh;
   text-align: center;

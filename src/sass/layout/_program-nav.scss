@@ -2,10 +2,14 @@
 @use "../abstracts/mixins";
 
 #program-nav {
+  position: sticky;
+  top: 0;
+  left: 0;
   border: 3px solid vars.$white;
 }
 
 #program-nav-container {
+  background-color: #120a2dc5; //vars.$background-blue;
   display: grid;
   gap: 1rem;
   text-align: center;
