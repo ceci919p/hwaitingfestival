@@ -48,6 +48,26 @@
   cursor: pointer;
 }
 
+#button-girlgroup {
+  border: 2px solid vars.$neonred;
+  box-shadow: 0px 0px 6px 2px vars.$lightneonred;
+}
+
+#button-boygroup {
+  border: 2px solid vars.$neonpurple;
+  box-shadow: 0px 0px 6px 2px vars.$lightneonpurple;
+}
+
+#button-soloist {
+  border: 2px solid vars.$neonpink;
+  box-shadow: 0px 0px 6px 2px vars.$lightneonpink;
+}
+
+#button-coed {
+  border: 2px solid vars.$neongreen;
+  box-shadow: 0px 0px 6px 2px vars.$lightneongreen;
+}
+
 //day filter
 
 //ARTIST LIST
@@ -62,18 +82,24 @@
 }
 
 .artist-card {
-  border-radius: 5px;
+  border-radius: 2px;
   cursor: pointer;
-  text-align: center;
+  text-align: left;
   width: 400px;
   height: 250px;
   position: relative;
 }
 
 .artist-title {
+  background-color: #120a2d;
+  padding-inline: 1rem;
+  padding-block: 0.3rem;
+  color: vars.$white;
+  //text-shadow: 0px 0px 10px #ffffff;
+  font-size: 2rem;
   position: absolute;
-  bottom: 10px;
-  left: 0px;
+  bottom: 10%;
+  left: 0%;
 }
 
 .artist-card-img {

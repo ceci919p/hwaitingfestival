@@ -8,24 +8,28 @@ export default function GenreFilter({ setGenreFilter }) {
         All artists
       </button>
       <button
+        id="button-girlgroup"
         className="genre-filter-button"
         onClick={() => setGenreFilter("Girl group")}
       >
         Girl group
       </button>
       <button
+        id="button-boygroup"
         className="genre-filter-button"
         onClick={() => setGenreFilter("Boy group")}
       >
         Boy Group
       </button>
       <button
+        id="button-soloist"
         className="genre-filter-button"
         onClick={() => setGenreFilter("Soloist")}
       >
         Soloist
       </button>
       <button
+        id="button-coed"
         className="genre-filter-button"
         onClick={() => setGenreFilter("Co-ed")}
       >
