@@ -32,6 +32,7 @@ function Artists(props) {
       <header id="artists-header">
         <h1>Artists</h1>
       </header>
+
       <FilterOptions
         setDayFilter={setDayFilter}
         setGenreFilter={setGenreFilter}

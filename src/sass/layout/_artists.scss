@@ -22,19 +22,23 @@
 //FILTER OPTIONS
 #filter-section {
   margin-block: 2rem 2rem;
+  margin-inline: 1rem;
+
+  @include mixins.bp-medium {
+    margin-inline: 1rem;
+  }
+
+  @include mixins.bp-huge {
+    margin-inline: 8rem;
+  }
 }
 
 //genre filter
 #genre-filter {
-  margin-block: 1rem 4rem;
+  margin-block: 1rem 2rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 1rem;
-
-  @include mixins.bp-large {
-    //justify-content: space-between;
-  }
 }
 
 .genre-filter-button {
@@ -68,7 +72,44 @@
   box-shadow: 0px 0px 6px 2px vars.$lightneongreen;
 }
 
-//day filter
+//day filter and search
+#filter-day-search {
+  display: flex;
+  margin-block: 1rem;
+  flex-wrap: wrap;
+}
+
+#day-filter {
+  padding-inline: 1rem;
+  padding-block: 0.7rem;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  margin-right: 1rem;
+  font-family: vars.$paragraphfont;
+  font-size: 0.9rem;
+  outline: 0;
+
+  &:focus {
+    //border: 2px solid vars.$neonblue;
+    box-shadow: 0px 0px 6px 4px vars.$neonblue;
+  }
+}
+
+#search-filter {
+  border: none;
+  background-color: vars.$white;
+  font-family: vars.$paragraphfont;
+  font-size: 1rem;
+  padding-inline: 1rem;
+  outline: 0;
+
+  &:focus {
+    //border: 2px solid vars.$neonblue;
+    box-shadow: 0px 0px 6px 4px vars.$neonblue;
+    border: none;
+  }
+}
 
 //ARTIST LIST
 #Artistlist {
@@ -78,7 +119,11 @@
   align-content: center;
   gap: 1rem;
   margin-top: 6rem;
-  margin-inline: auto;
+  margin-inline: 1rem;
+
+  @include mixins.bp-huge {
+    margin-inline: 8rem;
+  }
 }
 
 .artist-card {
@@ -86,9 +131,13 @@
   border-radius: 2px;
   cursor: pointer;
   text-align: left;
-  width: 400px;
+  width: 350px;
   height: 250px;
   position: relative;
+
+  @include mixins.bp-medium {
+    width: 400px;
+  }
 }
 
 .artist-title {

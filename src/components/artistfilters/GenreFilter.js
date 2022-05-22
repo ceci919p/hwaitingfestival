@@ -19,7 +19,7 @@ export default function GenreFilter({ setGenreFilter }) {
         className="genre-filter-button"
         onClick={() => setGenreFilter("Boy group")}
       >
-        Boy Group
+        Boy group
       </button>
       <button
         id="button-soloist"

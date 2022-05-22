@@ -13,9 +13,11 @@ export default function FilterOptions({
   return (
     <section id="filter-section">
       <GenreFilter setGenreFilter={setGenreFilter}></GenreFilter>
-      <DayFilter setDayFilter={setDayFilter}></DayFilter>
-      <SearchFilter setSearchInput={setSearchInput}></SearchFilter>
-      <Sorting setSortDir={setSortDir} sortDir={sortDir}></Sorting>
+      <div id="filter-day-search">
+        <DayFilter setDayFilter={setDayFilter}></DayFilter>
+        <SearchFilter setSearchInput={setSearchInput}></SearchFilter>{" "}
+        <Sorting setSortDir={setSortDir} sortDir={sortDir}></Sorting>
+      </div>
     </section>
   );
 }
