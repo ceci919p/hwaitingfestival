@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import SingleviewMain from "../components/SingleviewMain";
 
 export default function SingleArtist() {
   const { bandName } = useParams();
-  const [artist, setArtist] = useState("");
+  const [artist, setArtist] = useState([]);
   //navn på array - det er det der er state, navn på funktion - det skal kalde state (rebuilde)
 
   useEffect(
@@ -11,8 +12,15 @@ export default function SingleArtist() {
       //use effect gør at den kun kalder en enkelt gang, ellers ville den loope, da man ville kalde funktionen getproducts data(array) ville ændre sig og derved kalde setproducts igen
       async function getArtist() {
         const res = await fetch("https://hwaiting.herokuapp.com/bands");
-        const data = await res.json();
-        setArtist(data);
+        const artistData = await res.json();
+
+        const originalName = bandName.replace(/\+/g, " ");
+
+        let artistInfo = artistData.filter(
+          (artist) => artist.name === originalName
+        );
+
+        setArtist(artistInfo);
       }
       getArtist();
     },
@@ -21,22 +29,45 @@ export default function SingleArtist() {
     ]
   );
 
-  let artistInfo;
-  let memberList = [];
-  const originalName = bandName.replace(/\+/g, " ");
+  //  const originalName = bandName.replace(/\+/g, " ");
   //let { name, members, genre, logoCredits, logo, bio   = artistInfo[0];}
-
+  /*   let memberList = [];
   if (artist !== "") {
-    artistInfo = artist.filter((artist) => artist.name === originalName);
+ 
     //console.log(artistInfo[0]);
     artistInfo[0].members.forEach((m) => {
       memberList.push(<h3 key={m}>{m}</h3>);
     });
   }
+ */
+  //console.log(artist);
+  return <SingleviewMain artist={artist}></SingleviewMain>;
 
-  return (
-    <main>
-      {artist !== "" ? <h1>{artistInfo[0].name}</h1> : null}
+  /*  style={{
+            backgroundImage: `url(${
+              !artist[0].logo.includes("http")
+                ? `https://hwaiting.herokuapp.com/${artist.logo}`
+                : artist.logo
+            })`,
+          }} */
+
+  {
+    /*   <h1>{artist[0].name}</h1> */
+  }
+  {
+    /*       <img
+            className="artist-card-img"
+            src={
+              !props.artist.logo.includes("http")
+                ? `https://hwaiting.herokuapp.com/${props.artist.logo}`
+                : props.artist.logo
+            }
+            alt="artist img"
+          /> */
+  }
+
+  /*     <main>
+     <h1>{artistInfo[0].name}</h1> 
 
       <h3>Members: </h3>
       {artist !== "" ? <div> {memberList}</div> : null}
@@ -55,6 +86,5 @@ export default function SingleArtist() {
       {artist !== "" ? <p>{artistInfo[0].logoCredits}</p> : null}
       {artist !== "" ? <h3>{artistInfo[0].genre}</h3> : null}
       {artist !== "" ? <p>{artistInfo[0].bio}</p> : null}
-    </main>
-  );
+    </main> */
 }
