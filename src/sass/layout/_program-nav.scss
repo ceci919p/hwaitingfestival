@@ -33,4 +33,46 @@
   @include mixins.bp-huge {
     padding-inline: 12rem;
   }
+
+  a {
+    transition: all 0.2s ease-in-out;
+  }
+}
+//a tags
+#pro-nav-mon {
+  &:hover {
+    color: vars.$lightneonpink;
+  }
+}
+
+#pro-nav-tue {
+  &:hover {
+    color: vars.$lightneonred;
+  }
+}
+#pro-nav-wed {
+  &:hover {
+    color: vars.$lightneonorange;
+  }
+}
+#pro-nav-thu {
+  &:hover {
+    color: vars.$lightneonyellow;
+  }
+}
+#pro-nav-fri {
+  &:hover {
+    color: vars.$lightneongreen;
+  }
+}
+
+#pro-nav-sat {
+  &:hover {
+    color: vars.$lightneonblue;
+  }
+}
+#pro-nav-sun {
+  &:hover {
+    color: vars.$lightneonpurple;
+  }
 }
