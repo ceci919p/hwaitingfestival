@@ -24,6 +24,12 @@
   }
 }
 
+@mixin bp-1800 {
+  @media only screen and (min-width: 1800px) {
+    @content;
+  }
+}
+
 @mixin blue-button {
   border: 5px solid vars.$neonblue;
   box-shadow: 0px 0px 22px vars.$lightneonblue;

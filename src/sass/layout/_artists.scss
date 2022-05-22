@@ -21,7 +21,7 @@
 
 //FILTER OPTIONS
 #filter-section {
-  margin-block: 2rem 2rem;
+  margin-block: 4rem 2rem;
   margin-inline: 1rem;
 
   @include mixins.bp-medium {
@@ -30,6 +30,10 @@
 
   @include mixins.bp-huge {
     margin-inline: 8rem;
+  }
+
+  @include mixins.bp-1800 {
+    margin-inline: 18rem;
   }
 }
 
@@ -75,17 +79,18 @@
 //day filter and search
 #filter-day-search {
   display: flex;
+  gap: 1rem;
   margin-block: 1rem;
   flex-wrap: wrap;
 }
 
 #day-filter {
+  color: vars.$background-blue;
   padding-inline: 1rem;
   padding-block: 0.7rem;
   border: none;
   cursor: pointer;
   background-color: white;
-  margin-right: 1rem;
   font-family: vars.$paragraphfont;
   font-size: 0.9rem;
   outline: 0;
@@ -103,11 +108,25 @@
   font-size: 1rem;
   padding-inline: 1rem;
   outline: 0;
+  min-height: 2.5rem;
 
   &:focus {
     //border: 2px solid vars.$neonblue;
     box-shadow: 0px 0px 6px 4px vars.$neonblue;
     border: none;
+  }
+}
+
+#sorting-button {
+  background-color: vars.$white;
+  color: vars.$background-blue;
+  padding-inline: 1rem;
+  border: none;
+  cursor: pointer;
+  min-height: 2.5rem;
+
+  &:hover {
+    box-shadow: 0px 0px 6px 4px vars.$neonblue;
   }
 }
 

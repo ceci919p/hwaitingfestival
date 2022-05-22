@@ -4,7 +4,7 @@ export default function Sorting(props) {
   }
 
   return (
-    <button onClick={handleSort}>
+    <button id="sorting-button" onClick={handleSort}>
       {props.sortDir === "asc" ? "A-Z" : "Z-A"}
     </button>
   );
