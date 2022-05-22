@@ -1,0 +1,36 @@
+@use "../abstracts/vars";
+@use "../abstracts/mixins";
+
+#program-nav {
+  border: 3px solid vars.$white;
+}
+
+#program-nav-container {
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+  padding-block: 1rem;
+  box-shadow: 0px 0px 6px 4px vars.$white;
+
+  .nav-div {
+    background-color: vars.$white;
+    width: 2px;
+  }
+
+  @include mixins.bp-medium {
+    display: flex;
+    justify-content: center;
+  }
+
+  @include mixins.bp-large {
+    justify-content: space-evenly;
+  }
+
+  @include mixins.bp-wide {
+    padding-inline: 8rem;
+  }
+
+  @include mixins.bp-huge {
+    padding-inline: 12rem;
+  }
+}

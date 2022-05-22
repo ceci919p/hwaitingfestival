@@ -21,7 +21,6 @@ export default function Program(props) {
     <main id="program-main">
       <header id="program-header">
         <h1>Program</h1>
-        <hr></hr>
       </header>
       <ProgramNav cleanSchedule={cleanSchedule}></ProgramNav>
       <MonProgram cleanSchedule={cleanSchedule}></MonProgram>

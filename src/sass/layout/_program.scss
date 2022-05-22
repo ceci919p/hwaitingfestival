@@ -1,6 +1,14 @@
 @use "../abstracts/vars";
 @use "../abstracts/mixins";
 
+#program-header {
+  margin-block: 4rem;
+
+  @include mixins.bp-medium {
+    margin-block: 6rem;
+  }
+}
+
 .day-section {
   margin-block: 8rem 8rem;
   text-align: center;
