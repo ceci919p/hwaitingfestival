@@ -1,7 +1,121 @@
+@use "../abstracts/vars";
+@use "../abstracts/mixins";
+
 html {
   scroll-behavior: smooth;
 }
+#header-logo {
+  display: flex;
+  justify-content: center;
+}
 
 #logo {
-  height: 2.5rem;
+  height: auto;
+  width: 2.5rem;
+  margin-top: 1rem;
+}
+
+#footer {
+  overflow-x: hidden;
+  height: 5rem;
+  width: 100vw;
+  border-top: 3px solid vars.$white;
+  background-color: vars.$white;
+  position: absolute;
+  bottom: -10%;
+}
+
+#nav-container {
+  position: relative;
+  z-index: 2;
+}
+
+#navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  li {
+    list-style: none;
+    transition: 0.2s ease-out;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .inactive {
+    display: none;
+  }
+  #burgermenu {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    left: 1rem;
+    top: 1.5rem;
+    z-index: 5;
+  }
+  #bar1,
+  #bar2,
+  #bar3 {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    --webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+  }
+
+  .active1 {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .active2 {
+    opacity: 0;
+  }
+  .active3 {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  #menu {
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: vars.$background-blue;
+    padding: 10rem 3rem 3rem 3rem;
+    transition: ease-out;
+
+    @include mixins.bp-large {
+      width: 24rem;
+      border-right: 3px solid vars.$neonpurple;
+      box-shadow: 0px 0px 6px 4px vars.$lightneonpurple;
+    }
+
+    ul {
+      text-align: center;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      @include mixins.bp-large {
+        justify-content: left;
+        text-align: left;
+      }
+    }
+    li:hover {
+      transform: scale(1.1);
+    }
+  }
 }

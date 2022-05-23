@@ -1,10 +1,11 @@
-import { Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Home from "./routes/Home";
 import Artists from "./routes/Artists";
 import Program from "./routes/Program";
 import SingleArtist from "./routes/SingleArtist";
-import logo from "./images/logo_light.svg";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   const [schedule, setSchedule] = useState([]);
@@ -62,22 +63,10 @@ function App() {
       //tomt array hvor man kan putte variables ind som hvis ændrede sig ville køre funktionen igen
     ]
   );
-  console.log(artists);
+  //console.log(artists);
   return (
     <div className="App">
-      <aside>
-        <nav>
-          <Link to="/artists">Artists</Link> |{" "}
-          <Link to="/program">Program</Link>
-        </nav>
-        <header>
-          {" "}
-          <Link to="/">
-            <img id="logo" src={logo} alt="" />
-          </Link>
-        </header>
-        <footer></footer>
-      </aside>
+      <Header></Header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -90,6 +79,7 @@ function App() {
           element={<SingleArtist schedule={schedule} artists={artists} />}
         />
       </Routes>
+      {/*   <Footer></Footer> */}
     </div>
   );
 }

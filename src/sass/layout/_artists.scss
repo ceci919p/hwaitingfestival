@@ -146,13 +146,14 @@
 }
 
 .artist-card {
+  z-index: 1;
+  position: relative;
   overflow: hidden;
   border-radius: 2px;
   cursor: pointer;
   text-align: left;
   width: 350px;
   height: 250px;
-  position: relative;
 
   @include mixins.bp-medium {
     width: 400px;
@@ -160,6 +161,8 @@
 }
 
 .artist-title {
+  z-index: 1;
+  position: relative;
   background-color: #120a2da9;
   padding-inline: 1rem;
   padding-block: 0.3rem;
