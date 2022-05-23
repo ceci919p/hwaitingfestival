@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+//import { useState } from "react";
 
 export default function SingleArtist({ artists, schedule }) {
   const { bandName } = useParams();

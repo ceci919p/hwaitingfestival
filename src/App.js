@@ -76,6 +76,7 @@ function App() {
             <img id="logo" src={logo} alt="" />
           </Link>
         </header>
+        <footer></footer>
       </aside>
       <Routes>
         <Route path="/" element={<Home />} />
