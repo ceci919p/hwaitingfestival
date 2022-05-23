@@ -8,6 +8,7 @@ import logo from "./images/logo_light.svg";
 
 function App() {
   const [schedule, setSchedule] = useState([]);
+  const [artists, setArtists] = useState([]);
 
   useEffect(
     () => {
@@ -47,6 +48,21 @@ function App() {
     ]
   );
 
+  useEffect(
+    () => {
+      //use effect gør at den kun kalder en enkelt gang, ellers ville den loope, da man ville kalde funktionen getproducts data(array) ville ændre sig og derved kalde setproducts igen
+      async function getArtists() {
+        const res = await fetch("https://hwaiting.herokuapp.com/bands");
+        const data = await res.json();
+        setArtists(data);
+      }
+      getArtists();
+    },
+    [
+      //tomt array hvor man kan putte variables ind som hvis ændrede sig ville køre funktionen igen
+    ]
+  );
+  console.log(artists);
   return (
     <div className="App">
       <aside>
@@ -63,9 +79,15 @@ function App() {
       </aside>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="artists" element={<Artists schedule={schedule} />} />
+        <Route
+          path="artists"
+          element={<Artists artists={artists} schedule={schedule} />}
+        />
         <Route path="program" element={<Program schedule={schedule} />} />
-        <Route path="artists/:bandName" element={<SingleArtist />} />
+        <Route
+          path="artists/:bandName"
+          element={<SingleArtist schedule={schedule} artists={artists} />}
+        />
       </Routes>
     </div>
   );

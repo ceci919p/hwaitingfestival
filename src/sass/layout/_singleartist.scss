@@ -1,3 +1,50 @@
-.artist-info-img {
-  max-width: 50rem;
+@use "../abstracts/vars";
+@use "../abstracts/mixins";
+
+#sv-header {
+  position: relative;
+  margin-block: 3rem 2rem;
+  min-height: 40vh;
+  padding-block: 4rem 3.5rem;
+  border-top: 3px solid vars.$white;
+  border-bottom: 3px solid vars.$white;
+  box-shadow: 0px 0px 6px 4px vars.$white;
+}
+
+#sv-img {
+  width: 100%;
+  height: 40vh;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: contain;
+  display: grid;
+
+  filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-170deg)
+    saturate(500%) contrast(0.8);
+}
+
+#sv-h1 {
+  font-size: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include mixins.bp-medium {
+    font-size: 4rem;
+  }
+
+  @include mixins.bp-huge {
+    font-size: 6rem;
+  }
+}
+
+#sv-credits {
+  font-size: 0.8rem;
+  color: #7160a7;
+}
+
+#sv-schedule {
+  border: 3px solid vars.$neonpink;
+  max-width: 40rem;
 }
