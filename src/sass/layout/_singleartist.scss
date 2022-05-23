@@ -18,9 +18,10 @@
   background-position: center;
   background-size: contain;
   display: grid;
-
-  filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-170deg)
-    saturate(500%) contrast(0.8);
+  //filter: grayscale(100%) brightness(20%) sepia(100%) hue-rotate(-90deg)
+  //   saturate(500%);
+  // filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-170deg)
+  //   saturate(500%) contrast(0.8);
 }
 
 #sv-h1 {
@@ -75,7 +76,9 @@
 #sv-schedule {
   border: 3px solid vars.$neonblue;
   max-width: 20rem;
+
   box-shadow: 0px 0px 6px 2px vars.$lightneonblue;
+  //box-shadow: crimson;
   padding: 2rem;
   display: flex;
   flex-direction: column;

@@ -50,6 +50,55 @@ export default function SingleArtist({ artists, schedule }) {
     }
   }
 
+  function getTextColor() {
+    if (artistInfo[0].genre === "Girl group") {
+      return { textShadow: " 0px 0px 10px #ff0057" };
+    } else if (artistInfo[0].genre === "Boy group") {
+      return { textShadow: " 0px 0px 10px #8200ff" };
+    } else if (artistInfo[0].genre === "Soloist") {
+      return { textShadow: " 0px 0px 10px #fa00ff" };
+    } else if (artistInfo[0].genre === "Co-ed") {
+      return { textShadow: " 0px 0px 10px #32ff00" };
+    }
+  }
+
+  function getBgFilter() {
+    //filter:"grayscale(100%) brightness(50%) saturate(500%) contrast(0.8)",
+    if (artistInfo[0].genre === "Girl group") {
+      return "grayscale(100%) brightness(12%) sepia(100%) hue-rotate(-80deg) saturate(500%)";
+    } else if (artistInfo[0].genre === "Boy group") {
+      return "grayscale(100%) brightness(12%) sepia(100%) hue-rotate(-140deg) saturate(500%)";
+    } else if (artistInfo[0].genre === "Soloist") {
+      return "grayscale(100%) brightness(12%) sepia(100%) hue-rotate(-110deg) saturate(500%)";
+    } else if (artistInfo[0].genre === "Co-ed") {
+      return "grayscale(100%) brightness(12%) sepia(100%) hue-rotate(80deg) saturate(500%)";
+    }
+  }
+
+  function getBorderColor() {
+    if (artistInfo[0].genre === "Girl group") {
+      return "#ff0057";
+    } else if (artistInfo[0].genre === "Boy group") {
+      return "#8200ff";
+    } else if (artistInfo[0].genre === "Soloist") {
+      return "#fa00ff";
+    } else if (artistInfo[0].genre === "Co-ed") {
+      return "#32ff00";
+    }
+  }
+
+  function getBoxShadow() {
+    if (artistInfo[0].genre === "Girl group") {
+      return "0px 0px 6px 2px #ff6497";
+    } else if (artistInfo[0].genre === "Boy group") {
+      return "0px 0px 6px 2px #aa53ff";
+    } else if (artistInfo[0].genre === "Soloist") {
+      return "0px 0px 6px 2px #fc61ff";
+    } else if (artistInfo[0].genre === "Co-ed") {
+      return "0px 0px 6px 2px #88ff6b";
+    }
+  }
+
   return (
     <main>
       <header id="sv-header">
@@ -61,18 +110,24 @@ export default function SingleArtist({ artists, schedule }) {
                 ? `https://hwaiting.herokuapp.com/${artistInfo[0].logo}`
                 : artistInfo[0].logo
             })`,
+            filter: getBgFilter(),
           }}
         >
           {" "}
         </div>
-        <h1 id="sv-h1">{artistInfo[0].name}</h1>
+        <h1 style={getTextColor()} id="sv-h1">
+          {artistInfo[0].name}
+        </h1>
       </header>
 
       <section id="sv-first-section">
         <div id="sv-bio">
           <h3>Bio:</h3> <p>{artistInfo[0].bio}</p>
         </div>
-        <div id="sv-schedule">
+        <div
+          id="sv-schedule"
+          style={{ borderColor: getBorderColor(), boxShadow: getBoxShadow() }}
+        >
           <div>
             <h3>Day:</h3> <p>{getPrettyDay()}</p>
           </div>
@@ -100,7 +155,10 @@ export default function SingleArtist({ artists, schedule }) {
           />
           <p id="sv-credits">{artistInfo[0].logoCredits}</p>
         </div>
-        <div id="sv-second-box">
+        <div
+          id="sv-second-box"
+          style={{ borderColor: getBorderColor(), boxShadow: getBoxShadow() }}
+        >
           <div>
             <h3>Members:</h3> <div id="sv-memberlist">{memberList}</div>
           </div>
