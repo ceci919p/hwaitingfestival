@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ArtistList from "../components/ArtistList";
 import FilterOptions from "../components/FilterOptions";
 
