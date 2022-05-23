@@ -42,9 +42,109 @@
 #sv-credits {
   font-size: 0.8rem;
   color: #7160a7;
+  max-width: 40rem;
+}
+
+#sv-first-section {
+  margin-inline: 1rem;
+
+  @include mixins.bp-medium {
+    display: grid;
+    grid-template-columns: 1fr 16rem;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  @include mixins.bp-wide {
+    margin-inline: 8rem;
+  }
+
+  @include mixins.bp-huge {
+    margin-inline: 12rem;
+    gap: 12rem;
+  }
+
+  @include mixins.bp-1800 {
+    margin-inline: 16rem;
+  }
+  h3 {
+    color: vars.$white;
+  }
 }
 
 #sv-schedule {
-  border: 3px solid vars.$neonpink;
+  border: 3px solid vars.$neonblue;
+  max-width: 20rem;
+  box-shadow: 0px 0px 6px 2px vars.$lightneonblue;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-block: 4rem 4rem;
+
+  p {
+    margin-left: 0.2rem;
+  }
+}
+
+#sv-bio {
+  p {
+    margin-block: 1rem 1rem;
+    max-width: 70ch;
+  }
+}
+
+#sv-second-section {
+  margin-block: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: 1rem;
+
+  @include mixins.bp-medium {
+    display: grid;
+    grid-template-columns: 1fr 16rem;
+    gap: 2rem;
+  }
+
+  @include mixins.bp-wide {
+    margin-inline: 8rem;
+  }
+
+  @include mixins.bp-huge {
+    margin-inline: 12rem;
+  }
+
+  @include mixins.bp-1800 {
+    margin-inline: 16rem;
+  }
+
+  h3 {
+    color: vars.$white;
+  }
+
+  .sv-info-img {
+    max-width: 40rem;
+  }
+}
+
+#sv-second-box {
+  border: 3px solid vars.$neonblue;
   max-width: 40rem;
+  box-shadow: 0px 0px 6px 2px vars.$lightneonblue;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-block: 2rem 4rem;
+
+  #sv-memberlist {
+    display: flex;
+    flex-wrap: wrap;
+    //@at-root: 1rem;
+
+    p {
+      margin-right: 1rem;
+    }
+  }
 }

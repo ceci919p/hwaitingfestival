@@ -5,8 +5,6 @@ export default function SingleArtist({ artists, schedule }) {
   const { bandName } = useParams();
   //const [artist, setArtist] = useState("");
 
-  function showCredits() {}
-
   /*   useEffect(
     () => {
       //use effect gør at den kun kalder en enkelt gang, ellers ville den loope, da man ville kalde funktionen getproducts data(array) ville ændre sig og derved kalde setproducts igen
@@ -31,15 +29,32 @@ export default function SingleArtist({ artists, schedule }) {
   //console.log(artistSchedule);
 
   artistInfo[0].members.forEach((m) => {
-    memberList.push(<h3 key={m}>{m}</h3>);
+    memberList.push(<p key={m}>{m}</p>);
   });
+
+  function getPrettyDay() {
+    if (artistSchedule[0].day === "mon") {
+      return "Monday";
+    } else if (artistSchedule[0].day === "tue") {
+      return "Tuesday";
+    } else if (artistSchedule[0].day === "wed") {
+      return "Wednesday";
+    } else if (artistSchedule[0].day === "thu") {
+      return "Thursday";
+    } else if (artistSchedule[0].day === "fri") {
+      return "Friday";
+    } else if (artistSchedule[0].day === "sat") {
+      return "Saturday";
+    } else if (artistSchedule[0].day === "sun") {
+      return "Sunday";
+    }
+  }
 
   return (
     <main>
       <header id="sv-header">
         <div
           id="sv-img"
-          onMouseOver={showCredits()}
           style={{
             backgroundImage: `url(${
               !artistInfo[0].logo.includes("http")
@@ -51,17 +66,47 @@ export default function SingleArtist({ artists, schedule }) {
           {" "}
         </div>
         <h1 id="sv-h1">{artistInfo[0].name}</h1>
-        <p id="sv-credits">{artistInfo[0].logoCredits}</p>
       </header>
 
       <section id="sv-first-section">
+        <div id="sv-bio">
+          <h3>Bio:</h3> <p>{artistInfo[0].bio}</p>
+        </div>
         <div id="sv-schedule">
-          <h3>Day:</h3> <p>{artistSchedule[0].day}</p>
-          <h3>Time:</h3>{" "}
-          <p>
-            {artistSchedule[0].start} - {artistSchedule[0].end}
-          </p>
-          <h3>Stage:</h3> <p>{artistSchedule[0].stage}</p>
+          <div>
+            <h3>Day:</h3> <p>{getPrettyDay()}</p>
+          </div>
+          <div>
+            <h3>Time:</h3>{" "}
+            <p>
+              {artistSchedule[0].start} - {artistSchedule[0].end}
+            </p>
+          </div>
+          <div>
+            <h3>Stage:</h3> <p>{artistSchedule[0].stage}</p>
+          </div>
+        </div>
+      </section>
+      <section id="sv-second-section">
+        <div>
+          <img
+            className="sv-info-img"
+            src={
+              !artistInfo[0].logo.includes("http")
+                ? `https://hwaiting.herokuapp.com/${artistInfo[0].logo}`
+                : artistInfo[0].logo
+            }
+            alt="bandimage"
+          />
+          <p id="sv-credits">{artistInfo[0].logoCredits}</p>
+        </div>
+        <div id="sv-second-box">
+          <div>
+            <h3>Members:</h3> <div id="sv-memberlist">{memberList}</div>
+          </div>
+          <div>
+            <h3>Genre:</h3> <p>{artistInfo[0].genre}</p>
+          </div>
         </div>
       </section>
       {/*  <h3>Members: </h3>
