@@ -5,7 +5,7 @@ import Artists from "./routes/Artists";
 import Program from "./routes/Program";
 import SingleArtist from "./routes/SingleArtist";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+//import Footer from "./components/Footer";
 
 function App() {
   const [schedule, setSchedule] = useState([]);
@@ -67,19 +67,20 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="artists"
-          element={<Artists artists={artists} schedule={schedule} />}
-        />
-        <Route path="program" element={<Program schedule={schedule} />} />
-        <Route
-          path="artists/:bandName"
-          element={<SingleArtist schedule={schedule} artists={artists} />}
-        />
-      </Routes>
-      {/*   <Footer></Footer> */}
+      <div id="app-main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="artists"
+            element={<Artists artists={artists} schedule={schedule} />}
+          />
+          <Route path="program" element={<Program schedule={schedule} />} />
+          <Route
+            path="artists/:bandName"
+            element={<SingleArtist schedule={schedule} artists={artists} />}
+          />
+        </Routes>
+      </div>
     </div>
   );
 }
