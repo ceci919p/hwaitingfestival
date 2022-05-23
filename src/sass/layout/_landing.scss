@@ -23,11 +23,12 @@ body {
 }
 
 #landing-buttons {
+  margin-top: 1rem;
   position: relative;
   z-index: 3;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .landing-button {

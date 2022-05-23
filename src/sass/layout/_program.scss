@@ -1,6 +1,11 @@
 @use "../abstracts/vars";
 @use "../abstracts/mixins";
 
+#program-main {
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
 #program-header {
   margin-block: 4rem;
 
