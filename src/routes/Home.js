@@ -21,7 +21,7 @@ export default function Home() {
     tl.to(heading, { duration: 0.15, textShadow: "0px 0px 22px #5affff" });
     tl.to(heading, { duration: 0.15, textShadow: "0px 0px 0px #5affff" });
     tl.to(heading, { duration: 0.1, textShadow: "0px 0px 22px #5affff" });
-    tl.to(buttons, { duration: 0.1, opacity: 0 });
+    tl.to(buttons, { duration: 0.1, opacity: 0, delay: 0.2 });
     tl.to(buttons, { duration: 0.6, opacity: 1 });
     tl.to(aButton, {
       duration: 0.2,

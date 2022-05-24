@@ -1,54 +1,111 @@
+import { Link } from "react-scroll";
 export default function ProgramNav() {
   return (
     <nav id="program-nav">
       <ul id="program-nav-container">
         <div className="nav-div"></div>
         <li>
-          <a id="pro-nav-mon" href="#monday-section">
+          {/*  <a id="pro-nav-mon" href="#monday-section">
             Monday
-          </a>
+          </a> */}
+          {/* <Link to="/program#monday-section">Monday</Link> */}
+          <Link
+            to="monday-section"
+            id="pro-nav-mon"
+            className="pro-nav-links"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            Monday
+          </Link>
         </li>
         <div className="nav-div"></div>
         <li>
           {" "}
-          <a id="pro-nav-tue" href="#tuesday-section">
+          <Link
+            to="tuesday-section"
+            id="pro-nav-tue"
+            className="pro-nav-links"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
             Tuesday
-          </a>
+          </Link>
         </li>
         <div className="nav-div"></div>
         <li>
           {" "}
-          <a id="pro-nav-wed" href="#wednesday-section">
+          <Link
+            to="wednesday-section"
+            id="pro-nav-wed"
+            className="pro-nav-links"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
             Wednesday
-          </a>
+          </Link>
         </li>
         <div className="nav-div"></div>
         <li>
-          {" "}
-          <a id="pro-nav-thu" href="#thursday-section">
+          <Link
+            to="thursday-section"
+            id="pro-nav-thu"
+            className="pro-nav-links"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
             Thursday
-          </a>
+          </Link>
         </li>
         <div className="nav-div"></div>
         <li>
-          {" "}
-          <a id="pro-nav-fri" href="#friday-section">
+          <Link
+            to="friday-section"
+            id="pro-nav-fri"
+            className="pro-nav-links"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
             Friday
-          </a>
+          </Link>
         </li>
         <div className="nav-div"></div>
         <li>
-          {" "}
-          <a id="pro-nav-sat" href="#saturday-section">
+          <Link
+            to="saturday-section"
+            id="pro-nav-sat"
+            className="pro-nav-links"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
             Saturday
-          </a>
+          </Link>
         </li>
         <div className="nav-div"></div>
         <li>
-          {" "}
-          <a id="pro-nav-sun" href="#sunday-section">
+          <Link
+            to="sunday-section"
+            id="pro-nav-sun"
+            className="pro-nav-links"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
             Sunday
-          </a>
+          </Link>
         </li>
         <div className="nav-div"></div>
       </ul>
