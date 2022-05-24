@@ -1,6 +1,4 @@
 export default function GenreFilter({ setGenreFilter, genreFilter }) {
-  console.log(genreFilter);
-
   return (
     <div id="genre-filter">
       <button
