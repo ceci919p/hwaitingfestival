@@ -1,9 +1,6 @@
 @use "../abstracts/vars";
 @use "../abstracts/mixins";
 
-html {
-  scroll-behavior: smooth;
-}
 #header-logo {
   display: flex;
   justify-content: center;
@@ -20,16 +17,6 @@ html {
     box-shadow: 0px 0px 22px vars.$lightneonblue;
   }
 }
-/* 
-.App {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-#app-main {
-  flex: 1;
-} */
 
 #nav-container {
   position: relative;

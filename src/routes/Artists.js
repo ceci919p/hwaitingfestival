@@ -12,29 +12,31 @@ function Artists(props) {
   //navn på array - det er det der er state, navn på funktion - det skal kalde state (rebuilde)
 
   return (
-    <main id="artists-main">
-      <header id="artists-header">
-        <h1>Artists</h1>
-      </header>
-      <FilterOptions
-        setDayFilter={setDayFilter}
-        setGenreFilter={setGenreFilter}
-        genreFilter={genreFilter}
-        setSearchInput={setSearchInput}
-        setSortDir={setSortDir}
-        sortDir={sortDir}
-      ></FilterOptions>
-      <ArtistList
-        schedule={props.schedule}
-        artists={props.artists}
-        dayFilter={dayFilter}
-        genreFilter={genreFilter}
-        searchInput={searchInput}
-        sort={sort}
-        setSort={setSort}
-        sortDir={sortDir}
-      ></ArtistList>
-    </main>
+    <>
+      <main id="artists-main">
+        <header id="artists-header">
+          <h1>Artists</h1>
+        </header>
+        <FilterOptions
+          setDayFilter={setDayFilter}
+          setGenreFilter={setGenreFilter}
+          genreFilter={genreFilter}
+          setSearchInput={setSearchInput}
+          setSortDir={setSortDir}
+          sortDir={sortDir}
+        ></FilterOptions>
+        <ArtistList
+          schedule={props.schedule}
+          artists={props.artists}
+          dayFilter={dayFilter}
+          genreFilter={genreFilter}
+          searchInput={searchInput}
+          sort={sort}
+          setSort={setSort}
+          sortDir={sortDir}
+        ></ArtistList>
+      </main>
+    </>
   );
 }
 

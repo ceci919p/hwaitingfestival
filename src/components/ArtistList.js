@@ -74,19 +74,15 @@ export default function ArtistList({
   let artistsList = copySortedArtists.map((a) => (
     <Artist key={a.name} artist={a} />
   ));
-  //both empty in the beginning
-  //only filter empty when filter is used
-  //if artist empty make load, else if filter is empty and artist is full make search thing
-  //if (artist === 0) {render loader} else if (filter === 0 && artist >0) { show no result } else { show list}
-
+  /* 
   if (artists.length === 0) {
     console.log("LOADING");
   } else if (artistsList.length === 0 && artists.length > 0) {
     console.log("NO RESULTS");
   } else {
     console.log("SHOWING LIST");
-  }
-  //<div style={{'backgroundColor': status === 'approved' ? 'blue' : status === 'pending' ? 'black' : 'red'}}></div>
+  } */
+
   return (
     <>
       {artists.length === 0 ? (
@@ -95,12 +91,7 @@ export default function ArtistList({
             <div></div>
           </div>
         </div>
-      ) : /*  <div id="search-result-container">
-          <h4>No Result Found</h4>
-          <p>Sorry, that filter combination has no results</p>
-          <p>Please try different criteria</p>
-        </div> */
-      artistsList.length === 0 && artists.length > 0 ? (
+      ) : artistsList.length === 0 && artists.length > 0 ? (
         <div id="search-result-container">
           <h4>No Result Found</h4>
           <p>Sorry, that filter combination has no results</p>

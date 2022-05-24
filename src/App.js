@@ -5,6 +5,8 @@ import Artists from "./routes/Artists";
 import Program from "./routes/Program";
 import SingleArtist from "./routes/SingleArtist";
 import Header from "./components/Header";
+import ScrollToTop from "./components/ScrollToTop";
+
 //import Footer from "./components/Footer";
 
 function App() {
@@ -66,6 +68,7 @@ function App() {
   //console.log(artists);
   return (
     <div className="App">
+      <ScrollToTop />
       <Header></Header>
       <div id="app-main">
         <Routes>
