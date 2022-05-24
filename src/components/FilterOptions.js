@@ -6,13 +6,17 @@ import SearchFilter from "../components/artistfilters/SearchFilter";
 export default function FilterOptions({
   setDayFilter,
   setGenreFilter,
+  genreFilter,
   setSearchInput,
   setSortDir,
   sortDir,
 }) {
   return (
     <section id="filter-section">
-      <GenreFilter setGenreFilter={setGenreFilter}></GenreFilter>
+      <GenreFilter
+        setGenreFilter={setGenreFilter}
+        genreFilter={genreFilter}
+      ></GenreFilter>
       <div id="filter-day-search">
         <DayFilter setDayFilter={setDayFilter}></DayFilter>
         <SearchFilter setSearchInput={setSearchInput}></SearchFilter>{" "}

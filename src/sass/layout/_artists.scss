@@ -49,31 +49,50 @@
   margin-bottom: 1rem;
   padding: 0.8rem 1rem 0.8rem 1rem;
   border: 2px solid vars.$neonblue;
-  box-shadow: 0px 0px 6px 2px vars.$lightneonblue;
   width: 10rem;
   font-size: 1rem;
   background-color: transparent;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
   cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 0px 6px 2px vars.$lightneonblue;
+  }
 }
 
 #button-girlgroup {
   border: 2px solid vars.$neonred;
-  box-shadow: 0px 0px 6px 2px vars.$lightneonred;
+  &:hover {
+    box-shadow: 0px 0px 6px 2px vars.$lightneonred;
+  }
 }
 
 #button-boygroup {
   border: 2px solid vars.$neonpurple;
-  box-shadow: 0px 0px 6px 2px vars.$lightneonpurple;
+  &:hover {
+    box-shadow: 0px 0px 6px 2px vars.$lightneonpurple;
+  }
 }
 
 #button-soloist {
   border: 2px solid vars.$neonpink;
-  box-shadow: 0px 0px 6px 2px vars.$lightneonpink;
+
+  &:hover {
+    box-shadow: 0px 0px 6px 2px vars.$lightneonpink;
+  }
 }
 
 #button-coed {
   border: 2px solid vars.$neongreen;
-  box-shadow: 0px 0px 6px 2px vars.$lightneongreen;
+  &:hover {
+    box-shadow: 0px 0px 6px 2px vars.$lightneongreen;
+  }
 }
 
 //day filter and search
@@ -137,7 +156,7 @@
   justify-content: center;
   align-content: center;
   gap: 1rem;
-  margin-top: 6rem;
+  margin-block: 6rem 6rem;
   margin-inline: 1rem;
 
   @include mixins.bp-huge {
