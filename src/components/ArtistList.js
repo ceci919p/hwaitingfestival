@@ -75,5 +75,17 @@ export default function ArtistList({
     <Artist key={a.name} artist={a} />
   ));
 
-  return <section id="Artistlist">{artistsList}</section>;
+  return (
+    <>
+      {artistsList.length === 0 ? (
+        <div id="search-result-container">
+          <h4>No Result Found</h4>
+          <p>Sorry, that filter combination has no results</p>
+          <p>Please try different criteria</p>
+        </div>
+      ) : (
+        <section id="Artistlist">{artistsList}</section>
+      )}
+    </>
+  );
 }
