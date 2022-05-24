@@ -10,7 +10,7 @@ function Artists(props) {
   const [sortDir, setSortDir] = useState("asc");
   //const [fullArtistList, setFullArtistList] = useState(makeList(artists, schedule))
   //navn på array - det er det der er state, navn på funktion - det skal kalde state (rebuilde)
-
+  console.log(dayFilter);
   return (
     <main id="artists-main">
       <header id="artists-header">
