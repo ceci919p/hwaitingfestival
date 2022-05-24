@@ -91,7 +91,7 @@ export default function ArtistList({
     gsap.fromTo(
       artistList,
       { duration: 0.3, autoAlpha: 0 },
-      { duration: 1, autoAlpha: 1, delay: 0.2 }
+      { duration: 0.5, autoAlpha: 1, delay: 0.2 }
     );
   });
 
