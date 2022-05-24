@@ -37,10 +37,6 @@ export default function SingleArtist({ artists, schedule }) {
     );
   }
 
-  setTimeout(() => {
-    console.log("Hello, World!");
-  }, 3000);
-
   artistInfo[0].members.forEach((m) => {
     memberList.push(<p key={m}>{m}</p>);
   });

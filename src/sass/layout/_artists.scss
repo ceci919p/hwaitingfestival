@@ -213,6 +213,11 @@
   text-align: center;
 }
 
+#artists-loader {
+  display: grid;
+  justify-content: center;
+}
+
 #search-result-container {
   text-align: center;
   color: vars.$white;

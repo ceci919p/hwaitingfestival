@@ -90,8 +90,10 @@ export default function ArtistList({
   return (
     <>
       {artists.length === 0 ? (
-        <div>
-          <h4 id="artists-loading">LOADING</h4>
+        <div id="artists-loader">
+          <div class="lds-heart">
+            <div></div>
+          </div>
         </div>
       ) : /*  <div id="search-result-container">
           <h4>No Result Found</h4>
