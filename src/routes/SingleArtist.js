@@ -27,7 +27,13 @@ export default function SingleArtist({ artists, schedule }) {
   let artistSchedule = schedule.filter((a) => a.act === originalName);
   let artistInfo = artists.filter((artist) => artist.name === originalName);
   //console.log(artistSchedule);
-
+  if (artistInfo.length === 0) {
+    return (
+      <div>
+        <p>Loading</p>
+      </div>
+    );
+  }
   artistInfo[0].members.forEach((m) => {
     memberList.push(<p key={m}>{m}</p>);
   });
