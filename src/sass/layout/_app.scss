@@ -13,6 +13,12 @@ html {
   height: auto;
   width: 2.5rem;
   margin-top: 1rem;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0px 0px 22px vars.$lightneonblue;
+  }
 }
 /* 
 .App {
@@ -116,15 +122,14 @@ html {
     }
     li:hover {
       transform: scale(1.1);
+      text-shadow: 0px 0px 22px vars.$lightneonblue;
     }
   }
 }
 
-#footer {
+/* #footer {
   border-top: 3px solid vars.$white;
   box-shadow: 0px 0px 6px 4px vars.$white;
   background-color: vars.$background-blue;
 }
-
-#footer-socials {
-}
+ */

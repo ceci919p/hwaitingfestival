@@ -33,18 +33,33 @@ body {
 
 .landing-button {
   background-color: rgba(255, 255, 255, 0);
-  border-radius: 5px;
-  padding-block: 0.5rem;
-  padding-inline: 1rem;
+  border-radius: 2px;
+  padding-block: 0.8rem;
+  padding-inline: 1.2rem;
   cursor: pointer;
   min-width: 10rem;
   text-align: center;
+
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
 }
 
 #artist-button {
   @include mixins.blue-button;
+  &:hover {
+    box-shadow: 0px 0px 22px vars.$lightneonblue;
+  }
 }
 
 #program-button {
   @include mixins.pink-button;
+
+  &:hover {
+    box-shadow: 0px 0px 22px vars.$lightneonpink;
+  }
 }
