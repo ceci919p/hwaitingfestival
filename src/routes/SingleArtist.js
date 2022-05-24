@@ -29,11 +29,18 @@ export default function SingleArtist({ artists, schedule }) {
   //console.log(artistSchedule);
   if (artistInfo.length === 0) {
     return (
-      <div>
-        <p>Loading</p>
+      <div className="sv-heart-ld">
+        <div class="lds-heart">
+          <div></div>
+        </div>
       </div>
     );
   }
+
+  setTimeout(() => {
+    console.log("Hello, World!");
+  }, 3000);
+
   artistInfo[0].members.forEach((m) => {
     memberList.push(<p key={m}>{m}</p>);
   });
