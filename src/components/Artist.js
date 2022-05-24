@@ -4,9 +4,10 @@ import { gsap } from "gsap";
 
 export default function Artist(props) {
   const articleRef = useRef();
+
   useEffect(() => {
     const article = articleRef.current;
-    gsap.fromTo(article, { autoAlpha: 0 }, { duration: 1, autoAlpha: 1 });
+    gsap.fromTo(article, { autoAlpha: 0 }, { duration: 1, autoAlpha: 1, y: 0 });
   });
 
   function giveColor() {
@@ -23,8 +24,9 @@ export default function Artist(props) {
 
   return (
     <Link
-      className="article-artist-card"
       ref={articleRef}
+      className="article-artist-card"
+      //ref={articleRef}
       /* regex s is spaces, flag: g global and looks through whole string, "" is what we want to replace it with >nothing<  */
       to={`/artists/${props.artist.name.replace(/\s+/g, "+")}`}
     >

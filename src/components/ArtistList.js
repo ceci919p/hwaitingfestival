@@ -1,4 +1,6 @@
 import Artist from "./Artist";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 export default function ArtistList({
   schedule,
@@ -82,12 +84,22 @@ export default function ArtistList({
   } else {
     console.log("SHOWING LIST");
   } */
+  const artistListRef = useRef();
+  useEffect(() => {
+    const artistList = artistListRef.current;
+
+    gsap.fromTo(
+      artistList,
+      { duration: 0.3, autoAlpha: 0 },
+      { duration: 1, autoAlpha: 1, delay: 0.2 }
+    );
+  });
 
   return (
     <>
       {artists.length === 0 ? (
         <div id="artists-loader">
-          <div class="lds-heart">
+          <div className="lds-heart">
             <div></div>
           </div>
         </div>
@@ -98,7 +110,9 @@ export default function ArtistList({
           <p>Please try different criteria</p>
         </div>
       ) : (
-        <section id="Artistlist">{artistsList}</section>
+        <section ref={artistListRef} id="Artistlist">
+          {artistsList}
+        </section>
       )}
     </>
   );

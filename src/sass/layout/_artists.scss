@@ -164,11 +164,11 @@
   }
 }
 
-/* .article-artist-card {
-  //overflow: hidden;
-  //transform: translate(20%, 50%);
-  // transition: all 0.4s ease-out;
-} */
+.article-artist-card {
+  overflow: hidden;
+
+  transition: all 0.4s ease-out;
+}
 
 .artist-card {
   z-index: 1;
