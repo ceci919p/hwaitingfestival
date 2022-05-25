@@ -14,6 +14,17 @@ function App() {
   const [schedule, setSchedule] = useState([]);
   const [artists, setArtists] = useState([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  //fake users
+  const fakeUsers = [
+    {
+      username: "user1",
+      password: "pass1",
+    },
+    {
+      username: "user2",
+      password: "pass2",
+    },
+  ];
 
   useEffect(
     () => {
@@ -75,7 +86,12 @@ function App() {
       <div id="app-main">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/account" element={<Account />} />
+          <Route
+            path="/account"
+            element={
+              <Account fakeUsers={fakeUsers} setIsSubmitted={setIsSubmitted} />
+            }
+          />
           <Route
             path="artists"
             element={<Artists artists={artists} schedule={schedule} />}

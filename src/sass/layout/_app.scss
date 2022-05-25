@@ -11,10 +11,6 @@
   @include mixins.bp-huge {
     grid-template-columns: 49vw 51vw;
   }
-
-  @include mixins.bp-huge {
-    //grid-template-columns: 50vw 50vw;
-  }
 }
 
 #header-logos {
@@ -65,7 +61,6 @@
   padding-block: 2rem;
   background-color: vars.$background-blue;
   border: 3px solid vars.$white;
-
   width: 60vw;
 
   @include mixins.bp-large {

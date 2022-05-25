@@ -1,7 +1,14 @@
-export default function Account() {
+import MyAccount from "../components/MyAccount";
+import LogInAccount from "../components/LogInAccount";
+
+export default function Account({ fakeUsers, setIsSubmitted }) {
   return (
     <div>
-      <h1>Account</h1>
+      <LogInAccount
+        fakeUsers={fakeUsers}
+        setIsSubmitted={setIsSubmitted}
+      ></LogInAccount>
+      <MyAccount></MyAccount>
     </div>
   );
 }
