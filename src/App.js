@@ -6,12 +6,14 @@ import Program from "./routes/Program";
 import SingleArtist from "./routes/SingleArtist";
 import Header from "./components/Header";
 import ScrollToTop from "./components/ScrollToTop";
+import Account from "./routes/Account";
 
 //import Footer from "./components/Footer";
 
 function App() {
   const [schedule, setSchedule] = useState([]);
   const [artists, setArtists] = useState([]);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(
     () => {
@@ -73,6 +75,7 @@ function App() {
       <div id="app-main">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/account" element={<Account />} />
           <Route
             path="artists"
             element={<Artists artists={artists} schedule={schedule} />}

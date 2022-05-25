@@ -1,26 +1,101 @@
 @use "../abstracts/vars";
 @use "../abstracts/mixins";
 
-#header-logo {
-  display: flex;
-  justify-content: center;
+#header-logos-grid {
+  display: grid;
+  grid-template-columns: 47vw 54vw;
+
+  @include mixins.bp-medium {
+    grid-template-columns: 48vw 52vw;
+  }
+  @include mixins.bp-huge {
+    grid-template-columns: 49vw 51vw;
+  }
+
+  @include mixins.bp-huge {
+    //grid-template-columns: 50vw 50vw;
+  }
 }
 
-#logo {
+#header-logos {
+  grid-column: 2/3;
+  justify-content: space-between;
+  display: flex;
+}
+
+#home-logo {
+  margin-top: 0.5rem;
   height: auto;
   width: 2.5rem;
-  margin-top: 1rem;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-
   &:hover {
     box-shadow: 0px 0px 22px vars.$lightneonblue;
   }
 }
 
+#profile-logo-container {
+  position: relative;
+  z-index: 3;
+  margin-top: 0.5rem;
+  margin-right: 0.8rem;
+  height: auto;
+  width: 2.7rem;
+}
+
+#profile-logo {
+  padding-inline: 2px;
+  padding-block: 2px 0;
+  cursor: pointer;
+}
+
+.open-profile {
+  border: 3px solid vars.$white;
+  border-bottom-color: vars.$background-blue;
+}
+
+#profile-menu {
+  display: grid;
+  gap: 0.6rem;
+  position: absolute;
+  z-index: 2;
+  top: calc(100% - 3px);
+  right: 0.8rem;
+  padding-inline: 1rem;
+  padding-block: 2rem;
+  background-color: vars.$background-blue;
+  border: 3px solid vars.$white;
+
+  width: 60vw;
+
+  @include mixins.bp-large {
+    width: 40vw;
+  }
+
+  @include mixins.bp-huge {
+    width: 20vw;
+  }
+
+  a {
+    color: vars.$background-blue;
+  }
+}
+
+#login-button {
+  padding-block: 0.6rem;
+  text-align: center;
+  background-color: vars.$white;
+}
+
 #nav-container {
   position: relative;
   z-index: 2;
+}
+
+#nav-menu {
+  a {
+    color: white;
+  }
 }
 
 #navigation {
@@ -41,7 +116,6 @@
   }
   a {
     text-decoration: none;
-    color: white;
   }
 
   .inactive {
@@ -50,10 +124,12 @@
   #burgermenu {
     display: block;
     cursor: pointer;
-    position: fixed;
-    left: 1rem;
-    top: 1.5rem;
+    //position: fixed;
+    //left: 1rem;
+    // top: 1.5rem;
+    position: relative;
     z-index: 5;
+    margin-left: 0.8rem;
   }
   #bar1,
   #bar2,

@@ -1,10 +1,12 @@
 import { gsap } from "gsap";
 import logo from "../images/logo_light.svg";
+import profileLogo from "../images/profile.svg";
 import { Link } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+
   function ToggleBurgermenu() {
     setMenuOpen((old) => !old);
   }
@@ -15,10 +17,22 @@ export default function Header() {
     gsap.to(menuRef.current, { duration: 1, x: 0 });
   });
 
+  const [profileOpen, setProfileOpen] = useState(false);
+
+  function toggleProfilemenu() {
+    setProfileOpen((old) => !old);
+  }
+
+  /*   const profileRef = useRef();
+  useEffect(() => {
+    gsap.from(profileRef.current, { autoAlpha: 0 });
+    gsap.to(profileRef.current, { duration: 0.2, autoAlpha: 1 });
+  }); */
+
   return (
-    <header>
-      <aside id="nav-container">
-        <nav id="navigation">
+    <header id="nav-container">
+      <nav id="navigation">
+        <aside id="nav-menu">
           <div id="menu" ref={menuRef} className={menuOpen ? null : "inactive"}>
             <ul>
               <li>
@@ -49,7 +63,7 @@ export default function Header() {
                   onClick={ToggleBurgermenu}
                   to="/program"
                 >
-                  Program
+                  See Program
                 </Link>
               </li>
             </ul>
@@ -59,16 +73,38 @@ export default function Header() {
             <span id="bar2" className={menuOpen ? "active2" : null}></span>
             <span id="bar3" className={menuOpen ? "active3" : null}></span>
           </div>
-        </nav>
-      </aside>
-      {/*   <nav>
-        <Link to="/artists">Artists</Link> | <Link to="/program">Program</Link>
-      </nav> */}
-      <div id="header-logo">
-        <Link to="/">
-          <img id="logo" src={logo} alt="" />
-        </Link>
-      </div>
+        </aside>
+        <div>
+          <Link id="home-logo-container" to="/">
+            <img
+              id="home-logo"
+              className="header-logos"
+              src={logo}
+              alt="Logo"
+            />
+          </Link>
+        </div>
+        <div onClick={toggleProfilemenu} id="profile-logo-container">
+          <img
+            className={profileOpen ? "open-profile" : null}
+            id="profile-logo"
+            src={profileLogo}
+            alt=""
+          />
+        </div>
+        <div
+          id="profile-menu"
+          //ref={profileRef}
+          className={profileOpen ? null : "inactive"}
+        >
+          <p>
+            You are currently <b>not</b> logged in
+          </p>
+          <Link id="login-button" onClick={toggleProfilemenu} to="/account">
+            Log in
+          </Link>
+        </div>
+      </nav>
     </header>
   );
 }
