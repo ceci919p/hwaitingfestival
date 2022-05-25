@@ -1,14 +1,17 @@
 import MyAccount from "../components/MyAccount";
 import LogInAccount from "../components/LogInAccount";
 
-export default function Account({ fakeUsers, setIsSubmitted }) {
+export default function Account({ fakeUsers, setIsLoggedIn, isLoggedIn }) {
   return (
     <div>
-      <LogInAccount
-        fakeUsers={fakeUsers}
-        setIsSubmitted={setIsSubmitted}
-      ></LogInAccount>
-      <MyAccount></MyAccount>
+      {isLoggedIn ? (
+        <MyAccount></MyAccount>
+      ) : (
+        <LogInAccount
+          fakeUsers={fakeUsers}
+          setIsLoggedIn={setIsLoggedIn}
+        ></LogInAccount>
+      )}
     </div>
   );
 }

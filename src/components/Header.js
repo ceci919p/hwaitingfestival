@@ -4,7 +4,7 @@ import profileLogo from "../images/profile.svg";
 import { Link } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 
-export default function Header() {
+export default function Header({ isLoggedIn, setIsLoggedIn }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   function ToggleBurgermenu() {
@@ -21,6 +21,11 @@ export default function Header() {
 
   function toggleProfilemenu() {
     setProfileOpen((old) => !old);
+  }
+
+  function logOut() {
+    setIsLoggedIn(false);
+    toggleProfilemenu();
   }
 
   /*   const profileRef = useRef();
@@ -97,12 +102,24 @@ export default function Header() {
           //ref={profileRef}
           className={profileOpen ? null : "inactive"}
         >
-          <p>
-            You are currently <b>not</b> logged in
-          </p>
-          <Link id="login-button" onClick={toggleProfilemenu} to="/account">
-            Log in
-          </Link>
+          {isLoggedIn ? (
+            <>
+              <p>You are currently logged in</p>
+              <Link id="logout-button" onClick={logOut} to="/">
+                Logout
+              </Link>
+            </>
+          ) : (
+            <>
+              {" "}
+              <p>
+                You are currently <b>not</b> logged in
+              </p>
+              <Link id="login-button" onClick={toggleProfilemenu} to="/account">
+                Log in
+              </Link>{" "}
+            </>
+          )}
         </div>
       </nav>
     </header>

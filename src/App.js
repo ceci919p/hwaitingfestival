@@ -13,7 +13,7 @@ import Account from "./routes/Account";
 function App() {
   const [schedule, setSchedule] = useState([]);
   const [artists, setArtists] = useState([]);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   //fake users
   const fakeUsers = [
     {
@@ -82,14 +82,18 @@ function App() {
   return (
     <div className="App">
       <ScrollToTop />
-      <Header></Header>
+      <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}></Header>
       <div id="app-main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
             path="/account"
             element={
-              <Account fakeUsers={fakeUsers} setIsSubmitted={setIsSubmitted} />
+              <Account
+                isLoggedIn={isLoggedIn}
+                fakeUsers={fakeUsers}
+                setIsLoggedIn={setIsLoggedIn}
+              />
             }
           />
           <Route

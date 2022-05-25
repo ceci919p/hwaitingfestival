@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function LogInAccount({ fakeUsers, setIsSubmitted }) {
+export default function LogInAccount({ fakeUsers, setIsLoggedIn }) {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [userNameError, setNameError] = useState(false);
@@ -33,7 +33,7 @@ export default function LogInAccount({ fakeUsers, setIsSubmitted }) {
         // Invalid password
         setUserPasswordError(true);
       } else {
-        setIsSubmitted(true);
+        setIsLoggedIn(true);
       }
     } else {
       setNameError(true);

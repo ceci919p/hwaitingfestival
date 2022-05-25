@@ -82,6 +82,12 @@
   background-color: vars.$white;
 }
 
+#logout-button {
+  padding-block: 0.6rem;
+  text-align: center;
+  background-color: vars.$white;
+}
+
 #nav-container {
   position: relative;
   z-index: 2;
