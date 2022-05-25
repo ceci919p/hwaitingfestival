@@ -14,6 +14,7 @@ function App() {
   const [schedule, setSchedule] = useState([]);
   const [artists, setArtists] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [fav, setFav] = useState([]);
   //fake users
   const fakeUsers = [
     {
@@ -90,6 +91,7 @@ function App() {
             path="/account"
             element={
               <Account
+                fav={fav}
                 isLoggedIn={isLoggedIn}
                 fakeUsers={fakeUsers}
                 setIsLoggedIn={setIsLoggedIn}
@@ -103,7 +105,14 @@ function App() {
           <Route path="program" element={<Program schedule={schedule} />} />
           <Route
             path="artists/:bandName"
-            element={<SingleArtist schedule={schedule} artists={artists} />}
+            element={
+              <SingleArtist
+                isLoggedIn={isLoggedIn}
+                setFav={setFav}
+                schedule={schedule}
+                artists={artists}
+              />
+            }
           />
         </Routes>
       </div>

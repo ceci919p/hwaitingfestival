@@ -73,6 +73,42 @@
   }
 }
 
+#fav-schedule-wrapper {
+  display: grid;
+  margin-top: 2rem;
+}
+
+.active-fav {
+  cursor: pointer;
+  border: 3px solid vars.$neonred;
+  // box-shadow: 0px 0px 6px 2px vars.$lightneonred;
+}
+
+.unactive-fav {
+  border: 3px solid #919191;
+  color: #919191;
+}
+
+#fav-button {
+  background-color: vars.$background-blue;
+  border-radius: 2px;
+  padding-block: 0.8rem;
+  padding-inline: 1.2rem;
+
+  font-size: 1.05rem;
+  font-weight: 600;
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  align-items: center;
+
+  //margin-top: 2rem;
+}
+
+#fav-icon {
+  width: 2rem;
+  height: auto;
+}
+
 #sv-schedule {
   border: 3px solid vars.$neonblue;
   max-width: 20rem;
@@ -83,7 +119,7 @@
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  margin-block: 4rem 4rem;
+  margin-block: 2rem 4rem;
 
   p {
     margin-left: 0.2rem;

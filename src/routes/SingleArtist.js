@@ -1,7 +1,14 @@
 import { useParams } from "react-router-dom";
+import unactiveFav from "../images/unactive-fav.svg";
+import activeFav from "../images/active-fav.svg";
 //import { useState } from "react";
 
-export default function SingleArtist({ artists, schedule }) {
+export default function SingleArtist({
+  artists,
+  schedule,
+  isLoggedIn,
+  setFav,
+}) {
   const { bandName } = useParams();
   //const [artist, setArtist] = useState("");
 
@@ -30,7 +37,7 @@ export default function SingleArtist({ artists, schedule }) {
   if (artistInfo.length === 0) {
     return (
       <div className="sv-heart-ld">
-        <div class="lds-heart">
+        <div className="lds-heart">
           <div></div>
         </div>
       </div>
@@ -107,6 +114,10 @@ export default function SingleArtist({ artists, schedule }) {
       return "0px 0px 6px 2px #88ff6b";
     }
   }
+  function addToFav() {
+    console.log("Hello");
+    setFav((old) => [...old, { ...artistSchedule[0] }]);
+  }
 
   return (
     <main>
@@ -133,21 +144,35 @@ export default function SingleArtist({ artists, schedule }) {
         <div id="sv-bio">
           <h3>Bio:</h3> <p>{artistInfo[0].bio}</p>
         </div>
-        <div
-          id="sv-schedule"
-          style={{ borderColor: getBorderColor(), boxShadow: getBoxShadow() }}
-        >
-          <div>
-            <h3>Day:</h3> <p>{getPrettyDay()}</p>
-          </div>
-          <div>
-            <h3>Time:</h3>{" "}
-            <p>
-              {artistSchedule[0].start} - {artistSchedule[0].end}
-            </p>
-          </div>
-          <div>
-            <h3>Stage:</h3> <p>{artistSchedule[0].stage}</p>
+        <div id="fav-schedule-wrapper">
+          <button
+            onClick={isLoggedIn ? addToFav : undefined}
+            id="fav-button"
+            className={isLoggedIn ? "active-fav" : "unactive-fav"}
+          >
+            <img
+              id="fav-icon"
+              src={isLoggedIn ? activeFav : unactiveFav}
+              alt="favourite-icon"
+            />
+            {isLoggedIn ? "Add to schedule" : "Login to favourite"}
+          </button>
+          <div
+            id="sv-schedule"
+            style={{ borderColor: getBorderColor(), boxShadow: getBoxShadow() }}
+          >
+            <div>
+              <h3>Day:</h3> <p>{getPrettyDay()}</p>
+            </div>
+            <div>
+              <h3>Time:</h3>{" "}
+              <p>
+                {artistSchedule[0].start} - {artistSchedule[0].end}
+              </p>
+            </div>
+            <div>
+              <h3>Stage:</h3> <p>{artistSchedule[0].stage}</p>
+            </div>
           </div>
         </div>
       </section>

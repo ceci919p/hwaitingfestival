@@ -32,7 +32,7 @@ body {
 }
 
 .landing-button {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: vars.$background-blue;
   border-radius: 2px;
   padding-block: 0.8rem;
   padding-inline: 1.2rem;

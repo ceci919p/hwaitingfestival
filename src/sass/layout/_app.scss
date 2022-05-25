@@ -70,22 +70,27 @@
   @include mixins.bp-huge {
     width: 20vw;
   }
-
-  a {
-    color: vars.$background-blue;
-  }
 }
 
 #login-button {
   padding-block: 0.6rem;
   text-align: center;
   background-color: vars.$white;
+  color: vars.$background-blue;
 }
 
 #logout-button {
   padding-block: 0.6rem;
   text-align: center;
   background-color: vars.$white;
+  color: vars.$background-blue;
+}
+
+#myprofile-button {
+  color: vars.$white;
+  text-decoration: underline;
+  line-height: 3rem;
+  border-bottom: 2px solid vars.$white;
 }
 
 #nav-container {

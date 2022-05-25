@@ -47,7 +47,7 @@ export default function LogInAccount({ fakeUsers, setIsLoggedIn }) {
     <div id="form-information">
       <form onSubmit={handleSubmit}>
         <section id="Login">
-          <h2>Log in</h2>
+          <h2>Login</h2>
           <div id="form-wrapper">
             <div id="user" className="form-part">
               <label htmlFor="user">Username</label>

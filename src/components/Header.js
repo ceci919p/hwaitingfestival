@@ -104,6 +104,13 @@ export default function Header({ isLoggedIn, setIsLoggedIn }) {
         >
           {isLoggedIn ? (
             <>
+              <Link
+                id="myprofile-button"
+                onClick={toggleProfilemenu}
+                to="/account"
+              >
+                My Profile
+              </Link>
               <p>You are currently logged in</p>
               <Link id="logout-button" onClick={logOut} to="/">
                 Logout

@@ -1,11 +1,11 @@
 import MyAccount from "../components/MyAccount";
 import LogInAccount from "../components/LogInAccount";
 
-export default function Account({ fakeUsers, setIsLoggedIn, isLoggedIn }) {
+export default function Account({ fakeUsers, setIsLoggedIn, isLoggedIn, fav }) {
   return (
     <div>
       {isLoggedIn ? (
-        <MyAccount></MyAccount>
+        <MyAccount fav={fav}></MyAccount>
       ) : (
         <LogInAccount
           fakeUsers={fakeUsers}
