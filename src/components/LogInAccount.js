@@ -28,6 +28,9 @@ export default function LogInAccount({ fakeUsers, setIsLoggedIn }) {
     const userData = fakeUsers.find((user) => user.username === username.value);
 
     // Compare user info
+    //non boolean in boolean context it gives truthy or falsy
+    //if userinput not falsy then check password
+    //else userinput falsy then nameError
     if (userData) {
       if (userData.password !== password.value) {
         // Invalid password
@@ -37,7 +40,6 @@ export default function LogInAccount({ fakeUsers, setIsLoggedIn }) {
       }
     } else {
       setNameError(true);
-      // Username not found
     }
   };
 
@@ -46,50 +48,50 @@ export default function LogInAccount({ fakeUsers, setIsLoggedIn }) {
       <form onSubmit={handleSubmit}>
         <section id="Login">
           <h2>Log in</h2>
-          {/*     <div className="login-error-msg">Username not found</div>
-          <div className="login-error-msg">Invalid password</div> */}
-          <div id="user" className="form-part">
-            <label htmlFor="user">Username</label>
-            <input
-              style={
-                userNameError
-                  ? { border: "1px solid red" }
-                  : { border: "1px solid #7a7688" }
-              }
-              type="text"
-              id="username"
-              name="username"
-              required
-              onChange={userChanged}
-              value={username}
-            ></input>
-            {userNameError ? (
-              <p className="error-msg">Username not found</p>
-            ) : null}
-          </div>
+          <div id="form-wrapper">
+            <div id="user" className="form-part">
+              <label htmlFor="user">Username</label>
+              <input
+                style={
+                  userNameError
+                    ? { border: "1px solid red" }
+                    : { border: "1px solid #7a7688" }
+                }
+                type="text"
+                id="username"
+                name="username"
+                required
+                onChange={userChanged}
+                value={username}
+              ></input>
+              {userNameError ? (
+                <p className="error-msg">Username not found</p>
+              ) : null}
+            </div>
 
-          <div id="password" className="form-part">
-            <label htmlFor="password">Password</label>
-            <input
-              style={
-                userPasswordError
-                  ? { border: "1px solid red" }
-                  : { border: "1px solid #7a7688" }
-              }
-              type="password"
-              id="password"
-              name="password"
-              required
-              onChange={passwordChanged}
-              value={password}
-            ></input>{" "}
-            {userPasswordError ? (
-              <p className="error-msg">Invalid Password</p>
-            ) : null}
+            <div id="password" className="form-part">
+              <label htmlFor="password">Password</label>
+              <input
+                style={
+                  userPasswordError
+                    ? { border: "1px solid red" }
+                    : { border: "1px solid #7a7688" }
+                }
+                type="password"
+                id="password"
+                name="password"
+                required
+                onChange={passwordChanged}
+                value={password}
+              ></input>{" "}
+              {userPasswordError ? (
+                <p className="error-msg">Invalid Password</p>
+              ) : null}
+            </div>
+            <button type="submit" id="login-submit">
+              Login
+            </button>
           </div>
-          <button type="submit" id="login-submit">
-            Login
-          </button>
         </section>
       </form>
     </div>

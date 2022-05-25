@@ -2,7 +2,7 @@
 @use "../abstracts/mixins";
 
 #form-information {
-  margin-block: 4rem 4rem;
+  margin-block: 8rem 4rem;
   background-color: #e1d9e9;
   padding-block: 2rem 2rem;
   padding-inline: 1rem;
@@ -29,9 +29,14 @@
 
   input {
     color: vars.$background-blue;
-    //border: 1px solid #7a7688;
     padding: 8px;
     border-radius: 3px;
+
+    &:focus {
+      border: none;
+      outline: 0;
+      box-shadow: 0px 0px 6px 4px vars.$lightneonpurple;
+    }
   }
 }
 
@@ -41,10 +46,26 @@
   margin-bottom: 2rem;
 }
 
+#form-wrapper {
+  display: grid;
+}
+
 #login-submit {
-  color: vars.$background-blue;
+  margin-top: 1rem;
+  color: vars.$white;
   padding-block: 0.6rem;
-  width: 12rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: vars.$lightneonpurple;
+  border: none;
+  font-size: 1rem;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0px 0px 22px vars.$lightneonpurple;
+  }
 }
 
 .error-msg {
