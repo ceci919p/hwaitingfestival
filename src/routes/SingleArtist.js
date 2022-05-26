@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import unactiveFav from "../images/unactive-fav.svg";
 import activeFav from "../images/active-fav.svg";
 import faved from "../images/faved.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function SingleArtist({
   artists,
@@ -13,6 +13,10 @@ export default function SingleArtist({
 }) {
   const { bandName } = useParams();
   const [faveBtnActive, setFaveBtnActive] = useState(false);
+
+  useEffect(() => {
+    checkFaves();
+  }, []);
 
   let memberList = [];
   const originalName = bandName.replace(/\+/g, " ");
@@ -28,6 +32,13 @@ export default function SingleArtist({
         </div>
       </div>
     );
+  }
+
+  function checkFaves() {
+    let alreadyFav = fav.filter((a) => a.act === artistInfo[0].name);
+    if (alreadyFav.length !== 0) {
+      setFaveBtnActive(true);
+    }
   }
 
   artistInfo[0].members.forEach((m) => {
@@ -118,11 +129,6 @@ export default function SingleArtist({
       setFaveBtnActive(false);
       setFav(newFaves);
     }
-  }
-
-  let alreadyFav = fav.filter((a) => a.act === artistInfo[0].name);
-  if (alreadyFav.length !== 0) {
-    setFaveBtnActive(true);
   }
 
   return (
