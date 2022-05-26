@@ -16,7 +16,7 @@ export default function SingleArtist({
 
   useEffect(() => {
     checkFaves();
-  }, []);
+  });
 
   let memberList = [];
   const originalName = bandName.replace(/\+/g, " ");
