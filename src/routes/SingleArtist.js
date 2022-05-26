@@ -1,39 +1,25 @@
 import { useParams } from "react-router-dom";
 import unactiveFav from "../images/unactive-fav.svg";
 import activeFav from "../images/active-fav.svg";
-//import { useState } from "react";
+import faved from "../images/faved.svg";
+import { useState } from "react";
 
 export default function SingleArtist({
   artists,
   schedule,
   isLoggedIn,
   setFav,
+  fav,
 }) {
   const { bandName } = useParams();
-  //const [artist, setArtist] = useState("");
-
-  /*   useEffect(
-    () => {
-      //use effect gør at den kun kalder en enkelt gang, ellers ville den loope, da man ville kalde funktionen getproducts data(array) ville ændre sig og derved kalde setproducts igen
-      async function getArtist() {
-        const res = await fetch("https://hwaiting.herokuapp.com/bands");
-        const data = await res.json();
-        console.log(data);
-        setArtist(data);
-      }
-      getArtist();
-    },
-    [
-      //tomt array hvor man kan putte variables ind som hvis ændrede sig ville køre funktionen igen
-    ]
-  ); */
+  const [faveBtnActive, setFaveBtnActive] = useState(false);
 
   let memberList = [];
   const originalName = bandName.replace(/\+/g, " ");
   //let { name, members, genre, logoCredits, logo, bio   = artistInfo[0];}
   let artistSchedule = schedule.filter((a) => a.act === originalName);
   let artistInfo = artists.filter((artist) => artist.name === originalName);
-  //console.log(artistSchedule);
+
   if (artistInfo.length === 0) {
     return (
       <div className="sv-heart-ld">
@@ -114,9 +100,29 @@ export default function SingleArtist({
       return "0px 0px 6px 2px #88ff6b";
     }
   }
-  function addToFav() {
-    console.log("Hello");
-    setFav((old) => [...old, { ...artistSchedule[0] }]);
+
+  //if it exists in fav then display remove button
+
+  //if it exists in fav then remove from fav and display add button
+  //else if it does not exist in fav then add to fav and display remove btn
+  // setFav((old) => [...old, { ...artistSchedule[0] }]);
+  function ToggleFav() {
+    console.log("HEY");
+    let match = fav.filter((a) => a.act === artistInfo[0].name);
+    console.log(match);
+    if (match.length === 0) {
+      setFav((old) => [...old, { ...artistSchedule[0] }]);
+      setFaveBtnActive(true);
+    } else {
+      let newFaves = fav.filter((a) => a.act !== artistInfo[0].name);
+      setFaveBtnActive(false);
+      setFav(newFaves);
+    }
+  }
+
+  let alreadyFav = fav.filter((a) => a.act === artistInfo[0].name);
+  if (alreadyFav.length !== 0) {
+    setFaveBtnActive(true);
   }
 
   return (
@@ -145,18 +151,29 @@ export default function SingleArtist({
           <h3>Bio:</h3> <p>{artistInfo[0].bio}</p>
         </div>
         <div id="fav-schedule-wrapper">
-          <button
-            onClick={isLoggedIn ? addToFav : undefined}
-            id="fav-button"
-            className={isLoggedIn ? "active-fav" : "unactive-fav"}
-          >
-            <img
-              id="fav-icon"
-              src={isLoggedIn ? activeFav : unactiveFav}
-              alt="favourite-icon"
-            />
-            {isLoggedIn ? "Add to schedule" : "Login to favourite"}
-          </button>
+          {faveBtnActive ? (
+            <button
+              onClick={isLoggedIn ? ToggleFav : undefined}
+              id="faved-button"
+            >
+              <img id="faved-icon" src={faved} alt="favourite-icon" />
+              Remove from schedule
+            </button>
+          ) : (
+            <button
+              onClick={isLoggedIn ? ToggleFav : undefined}
+              id="fav-button"
+              className={isLoggedIn ? "active-fav" : "unactive-fav"}
+            >
+              <img
+                id="fav-icon"
+                src={isLoggedIn ? activeFav : unactiveFav}
+                alt="favourite-icon"
+              />
+              {isLoggedIn ? "Add to schedule" : "Login to favourite"}
+            </button>
+          )}
+
           <div
             id="sv-schedule"
             style={{ borderColor: getBorderColor(), boxShadow: getBoxShadow() }}

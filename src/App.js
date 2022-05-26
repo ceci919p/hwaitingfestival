@@ -83,7 +83,11 @@ function App() {
   return (
     <div className="App">
       <ScrollToTop />
-      <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}></Header>
+      <Header
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
+        setFav={setFav}
+      ></Header>
       <div id="app-main">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -109,6 +113,7 @@ function App() {
               <SingleArtist
                 isLoggedIn={isLoggedIn}
                 setFav={setFav}
+                fav={fav}
                 schedule={schedule}
                 artists={artists}
               />

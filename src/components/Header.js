@@ -4,7 +4,7 @@ import profileLogo from "../images/profile.svg";
 import { Link } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 
-export default function Header({ isLoggedIn, setIsLoggedIn }) {
+export default function Header({ isLoggedIn, setIsLoggedIn, setFav }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   function ToggleBurgermenu() {
@@ -25,6 +25,7 @@ export default function Header({ isLoggedIn, setIsLoggedIn }) {
 
   function logOut() {
     setIsLoggedIn(false);
+    setFav([]);
     toggleProfilemenu();
   }
 

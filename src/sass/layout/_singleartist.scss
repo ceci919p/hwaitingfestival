@@ -104,7 +104,26 @@
   //margin-top: 2rem;
 }
 
+#faved-button {
+  background-color: vars.$neonred;
+  border-radius: 2px;
+  padding-block: 0.8rem;
+  padding-inline: 1.2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  //margin-top: 2rem;
+}
+
 #fav-icon {
+  width: 2rem;
+  height: auto;
+}
+#faved-icon {
   width: 2rem;
   height: auto;
 }
