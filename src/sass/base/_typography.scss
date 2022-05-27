@@ -5,6 +5,7 @@ h1 {
   font-family: vars.$displayfont;
   font-size: 4rem;
   text-align: center;
+  cursor: default;
   @include mixins.bp-medium {
     font-size: 5rem;
   }
