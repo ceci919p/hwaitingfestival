@@ -3,11 +3,14 @@ import fbLogo from "../images/fb.svg";
 import igLogo from "../images/ig.svg";
 import ytLogo from "../images/yt.svg";
 import logo from "../images/logo_light.svg";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer id="footer">
-      <img className="footer-logo" src={logo} alt="Logo" />
+      <Link id="footer-logo-link" to="/">
+        <img className="footer-logo" src={logo} alt="Logo" />
+      </Link>
 
       <div id="footer-socials">
         <button id="footer-twitter" className="footer-social-wrapper">

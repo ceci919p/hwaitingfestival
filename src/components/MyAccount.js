@@ -1,4 +1,5 @@
 import FavArtist from "./FavArtist.js";
+import Footer from "../components/Footer";
 
 export default function MyAccount({ fav }) {
   let favList = fav.map((a) => <FavArtist key={a.act} artist={a} />);
@@ -12,6 +13,7 @@ export default function MyAccount({ fav }) {
       <main>
         <section>{favList}</section>
       </main>
+      <Footer></Footer>
     </>
   );
 }

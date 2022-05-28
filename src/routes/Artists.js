@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ArtistList from "../components/ArtistList";
 import FilterOptions from "../components/FilterOptions";
+import Footer from "../components/Footer";
 
 function Artists(props) {
   const [dayFilter, setDayFilter] = useState("All Days");
@@ -36,6 +37,7 @@ function Artists(props) {
           sortDir={sortDir}
         ></ArtistList>
       </main>
+      <Footer></Footer>
     </>
   );
 }

@@ -3,9 +3,13 @@
 
 footer {
   border-top: 3px solid vars.$white;
-  padding-block: 2rem 2rem;
+  padding-block: 1rem 1rem;
   display: grid;
   justify-content: center;
+  background-color: vars.$background-blue;
+  position: relative;
+  left: 0;
+  bottom: 0;
 
   @include mixins.bp-large {
     display: flex;
@@ -64,6 +68,12 @@ footer {
   }
 }
 
+#footer-logo-link {
+  @include mixins.bp-large {
+    order: 2;
+  }
+}
+
 .footer-logo {
   margin-bottom: 2rem;
   width: 3rem;
@@ -71,7 +81,6 @@ footer {
   cursor: pointer;
 
   @include mixins.bp-large {
-    order: 2;
     margin-bottom: 0;
   }
 

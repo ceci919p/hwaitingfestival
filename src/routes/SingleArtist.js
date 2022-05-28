@@ -3,6 +3,7 @@ import unactiveFav from "../images/unactive-fav.svg";
 import activeFav from "../images/active-fav.svg";
 import faved from "../images/faved.svg";
 import { useState, useEffect } from "react";
+import Footer from "../components/Footer";
 
 export default function SingleArtist({
   artists,
@@ -132,99 +133,103 @@ export default function SingleArtist({
   }
 
   return (
-    <main>
-      <header id="sv-header">
-        <div
-          id="sv-img"
-          style={{
-            backgroundImage: `url(${
-              !artistInfo[0].logo.includes("http")
-                ? `https://hwaiting.herokuapp.com/${artistInfo[0].logo}`
-                : artistInfo[0].logo
-            })`,
-            filter: getBgFilter(),
-          }}
-        >
-          {" "}
-        </div>
-        <h1 style={getTextColor()} id="sv-h1">
-          {artistInfo[0].name}
-        </h1>
-      </header>
-
-      <section id="sv-first-section">
-        <div id="sv-bio">
-          <h3>Bio:</h3> <p>{artistInfo[0].bio}</p>
-        </div>
-        <div id="fav-schedule-wrapper">
-          {faveBtnActive ? (
-            <button
-              onClick={isLoggedIn ? ToggleFav : undefined}
-              id="faved-button"
-            >
-              <img id="faved-icon" src={faved} alt="favourite-icon" />
-              Remove from schedule
-            </button>
-          ) : (
-            <button
-              onClick={isLoggedIn ? ToggleFav : undefined}
-              id="fav-button"
-              className={isLoggedIn ? "active-fav" : "unactive-fav"}
-            >
-              <img
-                id="fav-icon"
-                src={isLoggedIn ? activeFav : unactiveFav}
-                alt="favourite-icon"
-              />
-              {isLoggedIn ? "Add to schedule" : "Login to favourite"}
-            </button>
-          )}
-
+    <>
+      <main>
+        <header id="sv-header">
           <div
-            id="sv-schedule"
+            id="sv-img"
+            style={{
+              backgroundImage: `url(${
+                !artistInfo[0].logo.includes("http")
+                  ? `https://hwaiting.herokuapp.com/${artistInfo[0].logo}`
+                  : artistInfo[0].logo
+              })`,
+              filter: getBgFilter(),
+            }}
+          >
+            {" "}
+          </div>
+          <h1 style={getTextColor()} id="sv-h1">
+            {artistInfo[0].name}
+          </h1>
+        </header>
+
+        <section id="sv-first-section">
+          <div id="sv-bio">
+            <h3>Bio:</h3> <p>{artistInfo[0].bio}</p>
+          </div>
+          <div id="fav-schedule-wrapper">
+            {faveBtnActive ? (
+              <button
+                onClick={isLoggedIn ? ToggleFav : undefined}
+                id="faved-button"
+              >
+                <img id="faved-icon" src={faved} alt="favourite-icon" />
+                Remove from schedule
+              </button>
+            ) : (
+              <button
+                onClick={isLoggedIn ? ToggleFav : undefined}
+                id="fav-button"
+                className={isLoggedIn ? "active-fav" : "unactive-fav"}
+              >
+                <img
+                  id="fav-icon"
+                  src={isLoggedIn ? activeFav : unactiveFav}
+                  alt="favourite-icon"
+                />
+                {isLoggedIn ? "Add to schedule" : "Login to favourite"}
+              </button>
+            )}
+
+            <div
+              id="sv-schedule"
+              style={{
+                borderColor: getBorderColor(),
+                boxShadow: getBoxShadow(),
+              }}
+            >
+              <div>
+                <h3>Day:</h3> <p>{getPrettyDay()}</p>
+              </div>
+              <div>
+                <h3>Time:</h3>{" "}
+                <p>
+                  {artistSchedule[0].start} - {artistSchedule[0].end}
+                </p>
+              </div>
+              <div>
+                <h3>Stage:</h3> <p>{artistSchedule[0].stage}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="sv-second-section">
+          <div>
+            <img
+              className="sv-info-img"
+              src={
+                !artistInfo[0].logo.includes("http")
+                  ? `https://hwaiting.herokuapp.com/${artistInfo[0].logo}`
+                  : artistInfo[0].logo
+              }
+              alt="bandimage"
+            />
+            <p id="sv-credits">{artistInfo[0].logoCredits}</p>
+          </div>
+          <div
+            id="sv-second-box"
             style={{ borderColor: getBorderColor(), boxShadow: getBoxShadow() }}
           >
             <div>
-              <h3>Day:</h3> <p>{getPrettyDay()}</p>
+              <h3>Members:</h3> <div id="sv-memberlist">{memberList}</div>
             </div>
             <div>
-              <h3>Time:</h3>{" "}
-              <p>
-                {artistSchedule[0].start} - {artistSchedule[0].end}
-              </p>
-            </div>
-            <div>
-              <h3>Stage:</h3> <p>{artistSchedule[0].stage}</p>
+              <h3>Genre:</h3> <p>{artistInfo[0].genre}</p>
             </div>
           </div>
-        </div>
-      </section>
-      <section id="sv-second-section">
-        <div>
-          <img
-            className="sv-info-img"
-            src={
-              !artistInfo[0].logo.includes("http")
-                ? `https://hwaiting.herokuapp.com/${artistInfo[0].logo}`
-                : artistInfo[0].logo
-            }
-            alt="bandimage"
-          />
-          <p id="sv-credits">{artistInfo[0].logoCredits}</p>
-        </div>
-        <div
-          id="sv-second-box"
-          style={{ borderColor: getBorderColor(), boxShadow: getBoxShadow() }}
-        >
-          <div>
-            <h3>Members:</h3> <div id="sv-memberlist">{memberList}</div>
-          </div>
-          <div>
-            <h3>Genre:</h3> <p>{artistInfo[0].genre}</p>
-          </div>
-        </div>
-      </section>
-      {/*  <h3>Members: </h3>
+        </section>
+        {/*  <h3>Members: </h3>
       {artist !== "" ? <div> {memberList}</div> : null}
 
       {artist !== "" ? (
@@ -241,6 +246,8 @@ export default function SingleArtist({
       {artist !== "" ? <p>{artistInfo[0].logoCredits}</p> : null}
       {artist !== "" ? <h3>{artistInfo[0].genre}</h3> : null}
       {artist !== "" ? <p>{artistInfo[0].bio}</p> : null} */}
-    </main>
+      </main>
+      <Footer></Footer>
+    </>
   );
 }
