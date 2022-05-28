@@ -7,7 +7,6 @@ import SingleArtist from "./routes/SingleArtist";
 import Header from "./components/Header";
 import ScrollToTop from "./components/ScrollToTop";
 import Account from "./routes/Account";
-import Footer from "./components/Footer";
 
 //import Footer from "./components/Footer";
 

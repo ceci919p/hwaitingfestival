@@ -29,18 +29,22 @@ export default function Header({ isLoggedIn, setIsLoggedIn, setFav }) {
     toggleProfilemenu();
   }
 
-  /*   const profileRef = useRef();
-  useEffect(() => {
-    gsap.from(profileRef.current, { autoAlpha: 0 });
-    gsap.to(profileRef.current, { duration: 0.2, autoAlpha: 1 });
-  }); */
-
   return (
     <header id="nav-container">
       <nav id="navigation">
         <aside id="nav-menu">
           <div id="menu" ref={menuRef} className={menuOpen ? null : "inactive"}>
             <ul>
+              <li>
+                <Link
+                  id="header_link"
+                  className="nav-link"
+                  to="/account"
+                  onClick={ToggleBurgermenu}
+                >
+                  {isLoggedIn ? "My Profile" : "Log in"}
+                </Link>
+              </li>
               <li>
                 <Link
                   id="header_link"
