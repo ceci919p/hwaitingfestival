@@ -1,0 +1,65 @@
+@use "../abstracts/vars";
+@use "../abstracts/mixins";
+
+footer {
+  border-top: 3px solid vars.$white;
+  padding-block: 2rem 2rem;
+  display: grid;
+  justify-content: center;
+
+  p {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+#footer-socials {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer-social-wrapper {
+  border-radius: 100%;
+  background-color: transparent;
+  border: none;
+}
+
+.footer-social {
+  width: 2.5rem;
+  cursor: pointer;
+}
+
+#footer-twitter {
+  &:hover {
+    box-shadow: 0px 0px 8px #61eaff;
+  }
+}
+
+#footer-ig {
+  &:hover {
+    box-shadow: 0px 0px 8px #b84dff;
+  }
+}
+
+#footer-yt {
+  &:hover {
+    box-shadow: 0px 0px 8px #fb2626;
+  }
+}
+
+#footer-fb {
+  &:hover {
+    box-shadow: 0px 0px 8px #0021c8;
+  }
+}
+
+.footer-logo {
+  margin-bottom: 2rem;
+  width: 3rem;
+  margin-inline: auto;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 0px 8px vars.$lightneonblue;
+  }
+}

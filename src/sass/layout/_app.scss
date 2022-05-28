@@ -77,6 +77,10 @@
   text-align: center;
   background-color: vars.$white;
   color: vars.$background-blue;
+
+  &:hover {
+    box-shadow: 0px 0px 8px vars.$lightneonblue;
+  }
 }
 
 #logout-button {
@@ -171,6 +175,7 @@
     background-color: vars.$background-blue;
     padding: 10rem 3rem 3rem 3rem;
     transition: ease-out;
+    --webkit-transition: all 0.3s ease-in-out;
 
     @include mixins.bp-large {
       width: 24rem;
