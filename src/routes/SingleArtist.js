@@ -119,7 +119,6 @@ export default function SingleArtist({
   //else if it does not exist in fav then add to fav and display remove btn
   // setFav((old) => [...old, { ...artistSchedule[0] }]);
   function ToggleFav() {
-    console.log("HEY");
     let match = fav.filter((a) => a.act === artistInfo[0].name);
     console.log(match);
     if (match.length === 0) {
