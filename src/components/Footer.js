@@ -7,9 +7,8 @@ import logo from "../images/logo_light.svg";
 export default function Footer() {
   return (
     <footer id="footer">
-      <div>
-        <img className="footer-logo" src={logo} alt="Logo" />
-      </div>
+      <img className="footer-logo" src={logo} alt="Logo" />
+
       <div id="footer-socials">
         <button id="footer-twitter" className="footer-social-wrapper">
           <img className="footer-social" src={twitterLogo} alt="Twitter" />

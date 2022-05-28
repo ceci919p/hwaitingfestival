@@ -7,9 +7,20 @@ footer {
   display: grid;
   justify-content: center;
 
+  @include mixins.bp-large {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1rem 1rem;
+  }
+
   p {
     text-align: center;
     margin-top: 1rem;
+
+    @include mixins.bp-large {
+      order: 3;
+    }
   }
 }
 
@@ -31,25 +42,25 @@ footer {
 
 #footer-twitter {
   &:hover {
-    box-shadow: 0px 0px 8px #61eaff;
+    box-shadow: 0px 0px 16px #00ddff;
   }
 }
 
 #footer-ig {
   &:hover {
-    box-shadow: 0px 0px 8px #b84dff;
+    box-shadow: 0px 0px 16px #9900ff;
   }
 }
 
 #footer-yt {
   &:hover {
-    box-shadow: 0px 0px 8px #fb2626;
+    box-shadow: 0px 0px 16px #ff0000;
   }
 }
 
 #footer-fb {
   &:hover {
-    box-shadow: 0px 0px 8px #0021c8;
+    box-shadow: 0px 0px 16px rgb(35, 57, 255);
   }
 }
 
@@ -59,7 +70,12 @@ footer {
   margin-inline: auto;
   cursor: pointer;
 
+  @include mixins.bp-large {
+    order: 2;
+    margin-bottom: 0;
+  }
+
   &:hover {
-    box-shadow: 0px 0px 8px vars.$lightneonblue;
+    box-shadow: 0px 0px 12px vars.$lightneonblue;
   }
 }
