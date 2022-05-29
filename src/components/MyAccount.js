@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import FavArtist from "./FavArtist.js";
 import Footer from "../components/Footer";
 import heartImg from "../images/heart.svg";
+import sakuraImg from "../images/sakura.svg";
 
 export default function MyAccount({ fav, setFav }) {
   let favList = fav.map((a) => (
@@ -32,6 +33,7 @@ export default function MyAccount({ fav, setFav }) {
       {" "}
       <header id="account-header">
         <h1>Profile</h1>
+        <img id="account-header-img" src={sakuraImg} alt="Sakura"></img>
       </header>
       <main>
         <section id="account-info">

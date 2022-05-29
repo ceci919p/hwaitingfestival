@@ -7,6 +7,7 @@ import FriProgram from "../components/programs/FriProgram";
 import SatProgram from "../components/programs/SatProgram";
 import SunProgram from "../components/programs/SunProgram";
 import Footer from "../components/Footer";
+import rainbowImg from "../images/rainbow.svg";
 
 export default function Program(props) {
   //console.log(props.schedule);
@@ -23,6 +24,7 @@ export default function Program(props) {
       <main id="program-main">
         <header id="program-header">
           <h1>Program</h1>
+          <img id="program-header-img" src={rainbowImg} alt="Rainbow"></img>
         </header>
         <ProgramNav cleanSchedule={cleanSchedule}></ProgramNav>
         <MonProgram cleanSchedule={cleanSchedule}></MonProgram>

@@ -3,10 +3,18 @@
 
 #program-header {
   margin-block: 4rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
 
   @include mixins.bp-medium {
     margin-block: 6rem;
   }
+}
+
+#program-header-img {
+  max-width: 7rem;
 }
 
 .day-section {
