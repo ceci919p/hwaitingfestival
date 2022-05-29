@@ -7,7 +7,25 @@ export default function MyAccount({ fav, setFav }) {
   let favList = fav.map((a) => (
     <FavArtist fav={fav} setFav={setFav} key={a.act} artist={a} />
   ));
-  console.log(fav);
+  //make copy since sort is destructive
+  let copyFavList = favList.map((a) => {
+    return { ...a };
+  });
+
+  //give days a value/number to sort on
+  const days = {
+    mon: 1,
+    tue: 2,
+    wed: 3,
+    thu: 4,
+    fri: 5,
+    sat: 6,
+    sun: 7,
+  };
+  //sort by passing custom callback that ranks object according to index in ur days object
+  copyFavList.sort((a, b) => {
+    return days[a.props.artist.day] - days[b.props.artist.day];
+  });
 
   return (
     <>
@@ -49,7 +67,7 @@ export default function MyAccount({ fav, setFav }) {
             </p>
           </section>
         ) : (
-          <section id="fav-list">{favList}</section>
+          <section id="fav-list">{copyFavList}</section>
         )}
       </main>
       <Footer></Footer>
