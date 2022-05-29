@@ -110,7 +110,9 @@
 }
 
 #account-info-left {
-  margin-left: 4rem;
+  @include mixins.bp-medium {
+    margin-left: 4rem;
+  }
 }
 
 #account-fav-links {
@@ -131,6 +133,16 @@
 #account-img {
   max-width: 20rem;
   margin-inline: auto;
+}
+
+#fav-list-notif {
+  text-align: center;
+  padding-inline: 1rem;
+  padding-block: 6rem 6rem;
+}
+
+.favlist-notif-link {
+  font-size: 1rem;
 }
 
 #fav-list {

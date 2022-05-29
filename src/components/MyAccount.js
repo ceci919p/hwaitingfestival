@@ -34,7 +34,23 @@ export default function MyAccount({ fav, setFav }) {
             <img id="account-img" src={heartImg} alt="heart" />
           </div>
         </section>
-        <section id="fav-list">{favList}</section>
+        {fav.length === 0 ? (
+          <section id="fav-list-notif">
+            <p>
+              Oops! Your list of favourites are currently empty! Go to{" "}
+              <Link className="favlist-notif-link" to="/artists">
+                artists{" "}
+              </Link>
+              or{" "}
+              <Link className="favlist-notif-link" to="/program">
+                program
+              </Link>{" "}
+              to browse bands.{" "}
+            </p>
+          </section>
+        ) : (
+          <section id="fav-list">{favList}</section>
+        )}
       </main>
       <Footer></Footer>
     </>
