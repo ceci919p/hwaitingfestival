@@ -96,6 +96,7 @@ function App() {
             element={
               <Account
                 fav={fav}
+                setFav={setFav}
                 isLoggedIn={isLoggedIn}
                 fakeUsers={fakeUsers}
                 setIsLoggedIn={setIsLoggedIn}

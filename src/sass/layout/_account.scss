@@ -154,6 +154,8 @@
   min-width: 30rem;
   display: flex;
   flex-direction: column;
+  --webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   h2 {
     font-family: vars.$paragraphfont;
@@ -182,5 +184,6 @@
   #favlist-heart-icon {
     align-self: flex-end;
     width: 2rem;
+    cursor: pointer;
   }
 }

@@ -3,8 +3,10 @@ import FavArtist from "./FavArtist.js";
 import Footer from "../components/Footer";
 import heartImg from "../images/heart.svg";
 
-export default function MyAccount({ fav }) {
-  let favList = fav.map((a) => <FavArtist key={a.act} artist={a} />);
+export default function MyAccount({ fav, setFav }) {
+  let favList = fav.map((a) => (
+    <FavArtist fav={fav} setFav={setFav} key={a.act} artist={a} />
+  ));
   console.log(fav);
 
   return (
