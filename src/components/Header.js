@@ -13,7 +13,7 @@ export default function Header({ isLoggedIn, setIsLoggedIn, setFav }) {
 
   const menuRef = useRef();
   useEffect(() => {
-    gsap.from(menuRef.current, { x: -1500 });
+    //gsap.from(menuRef.current, { x: -1500 });
     gsap.to(menuRef.current, { duration: 1, x: 0 });
   });
 
@@ -31,31 +31,23 @@ export default function Header({ isLoggedIn, setIsLoggedIn, setFav }) {
 
   return (
     <header id="nav-container">
-      <nav id="navigation">
-        <aside id="nav-menu">
-          <div id="menu" ref={menuRef} className={menuOpen ? null : "inactive"}>
-            <ul>
-              <li>
-                <Link
-                  id="header_link"
-                  className="nav-link"
-                  to="/account"
-                  onClick={ToggleBurgermenu}
-                >
-                  {isLoggedIn ? "My Profile" : "Log in"}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  id="header_link"
-                  className="nav-link"
-                  to="/"
-                  onClick={ToggleBurgermenu}
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
+      <nav id="nav">
+        <div className="navbar">
+          <Link id="home-logo-container" to="/">
+            <img
+              id="home-logo"
+              className="header-logos"
+              src={logo}
+              alt="Logo"
+            />
+          </Link>
+          <div id="nav-web-right">
+            <ul
+              ref={menuRef}
+              className={menuOpen ? null : "inactive"}
+              id="nav-menu"
+            >
+              <li className="nav-item">
                 <Link
                   id="header_link"
                   className="nav-link"
@@ -63,10 +55,9 @@ export default function Header({ isLoggedIn, setIsLoggedIn, setFav }) {
                   onClick={ToggleBurgermenu}
                 >
                   See Artists
-                </Link>{" "}
+                </Link>
               </li>
-              <li>
-                {" "}
+              <li className="nav-item">
                 <Link
                   id="header_link"
                   className="nav-link"
@@ -77,61 +68,59 @@ export default function Header({ isLoggedIn, setIsLoggedIn, setFav }) {
                 </Link>
               </li>
             </ul>
+
+            <div id="nav-right-side">
+              <div className="hamburger" onClick={ToggleBurgermenu}>
+                <span id="bar1" className={menuOpen ? "active1" : null}></span>
+                <span id="bar2" className={menuOpen ? "active2" : null}></span>
+                <span id="bar3" className={menuOpen ? "active3" : null}></span>
+              </div>
+
+              <div onClick={toggleProfilemenu} id="profile-logo-container">
+                <img
+                  className={profileOpen ? "open-profile" : null}
+                  id="profile-logo"
+                  src={profileLogo}
+                  alt=""
+                />
+              </div>
+            </div>
           </div>
-          <div id="burgermenu" onClick={ToggleBurgermenu}>
-            <span id="bar1" className={menuOpen ? "active1" : null}></span>
-            <span id="bar2" className={menuOpen ? "active2" : null}></span>
-            <span id="bar3" className={menuOpen ? "active3" : null}></span>
+          <div
+            id="profile-menu"
+            //ref={profileRef}
+            className={profileOpen ? null : "profile-inactive"}
+          >
+            {isLoggedIn ? (
+              <>
+                <Link
+                  id="myprofile-button"
+                  onClick={toggleProfilemenu}
+                  to="/account"
+                >
+                  My Profile
+                </Link>
+                <p>You are currently logged in</p>
+                <Link id="logout-button" onClick={logOut} to="/">
+                  Logout
+                </Link>
+              </>
+            ) : (
+              <>
+                {" "}
+                <p>
+                  You are currently <b>not</b> logged in
+                </p>
+                <Link
+                  id="login-button"
+                  onClick={toggleProfilemenu}
+                  to="/account"
+                >
+                  Log in
+                </Link>{" "}
+              </>
+            )}
           </div>
-        </aside>
-        <div>
-          <Link id="home-logo-container" to="/">
-            <img
-              id="home-logo"
-              className="header-logos"
-              src={logo}
-              alt="Logo"
-            />
-          </Link>
-        </div>
-        <div onClick={toggleProfilemenu} id="profile-logo-container">
-          <img
-            className={profileOpen ? "open-profile" : null}
-            id="profile-logo"
-            src={profileLogo}
-            alt=""
-          />
-        </div>
-        <div
-          id="profile-menu"
-          //ref={profileRef}
-          className={profileOpen ? null : "inactive"}
-        >
-          {isLoggedIn ? (
-            <>
-              <Link
-                id="myprofile-button"
-                onClick={toggleProfilemenu}
-                to="/account"
-              >
-                My Profile
-              </Link>
-              <p>You are currently logged in</p>
-              <Link id="logout-button" onClick={logOut} to="/">
-                Logout
-              </Link>
-            </>
-          ) : (
-            <>
-              {" "}
-              <p>
-                You are currently <b>not</b> logged in
-              </p>
-              <Link id="login-button" onClick={toggleProfilemenu} to="/account">
-                Log in
-              </Link>{" "}
-            </>
-          )}
         </div>
       </nav>
     </header>
