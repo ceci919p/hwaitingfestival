@@ -179,7 +179,7 @@
     transition: ease-out;
     --webkit-transition: all 0.3s ease-in-out;
 
-    @include mixins.bp-large {
+    @include mixins.bp-medium {
       width: 24rem;
       border-right: 3px solid vars.$neonpurple;
       box-shadow: 0px 0px 6px 4px vars.$lightneonpurple;

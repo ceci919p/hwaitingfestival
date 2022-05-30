@@ -6,9 +6,9 @@
   margin-block: 3rem 2rem;
   min-height: 40vh;
   padding-block: 4rem 3.5rem;
-  border-top: 3px solid vars.$white;
-  border-bottom: 3px solid vars.$white;
-  box-shadow: 0px 0px 6px 4px vars.$white;
+  border-top: 1px solid vars.$white;
+  border-bottom: 1px solid vars.$white;
+  box-shadow: 0px 0px 6px 2px vars.$white;
 }
 
 #sv-img {
@@ -76,6 +76,10 @@
 #fav-schedule-wrapper {
   display: grid;
   margin-top: 2rem;
+
+  h3 {
+    font-size: 1.5rem;
+  }
 }
 
 .active-fav {
@@ -186,6 +190,7 @@
 
   h3 {
     color: vars.$white;
+    font-size: 1.5rem;
   }
 
   .sv-info-img {
@@ -197,7 +202,7 @@
   border: 3px solid vars.$neonblue;
   max-width: 40rem;
   box-shadow: 0px 0px 6px 2px vars.$lightneonblue;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -208,8 +213,10 @@
     flex-wrap: wrap;
     //@at-root: 1rem;
 
-    p {
+    h3 {
       margin-right: 1rem;
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
     }
   }
 }

@@ -43,7 +43,7 @@ export default function SingleArtist({
   }
 
   artistInfo[0].members.forEach((m) => {
-    memberList.push(<p key={m}>{m}</p>);
+    memberList.push(<h3 key={m}>{m}</h3>);
   });
 
   function getPrettyDay() {
@@ -189,16 +189,16 @@ export default function SingleArtist({
               }}
             >
               <div>
-                <h3>Day:</h3> <p>{getPrettyDay()}</p>
+                <p>Day:</p> <h3>{getPrettyDay()}</h3>
               </div>
               <div>
-                <h3>Time:</h3>{" "}
-                <p>
+                <p>Time:</p>{" "}
+                <h3>
                   {artistSchedule[0].start} - {artistSchedule[0].end}
-                </p>
+                </h3>
               </div>
               <div>
-                <h3>Stage:</h3> <p>{artistSchedule[0].stage}</p>
+                <p>Stage:</p> <h3>{artistSchedule[0].stage}</h3>
               </div>
             </div>
           </div>
@@ -221,10 +221,10 @@ export default function SingleArtist({
             style={{ borderColor: getBorderColor(), boxShadow: getBoxShadow() }}
           >
             <div>
-              <h3>Members:</h3> <div id="sv-memberlist">{memberList}</div>
+              <p>Members:</p> <div id="sv-memberlist">{memberList}</div>
             </div>
             <div>
-              <h3>Genre:</h3> <p>{artistInfo[0].genre}</p>
+              <p>Genre:</p> <h3>{artistInfo[0].genre}</h3>
             </div>
           </div>
         </section>
