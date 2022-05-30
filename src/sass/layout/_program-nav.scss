@@ -5,7 +5,7 @@
   position: sticky;
   top: 0;
   left: 0;
-  border: 3px solid vars.$white;
+  border: 1px solid vars.$white;
 }
 
 #program-nav-container {
@@ -14,7 +14,7 @@
   gap: 1rem;
   text-align: center;
   padding-block: 1rem;
-  box-shadow: 0px 0px 6px 4px vars.$white;
+  box-shadow: 0px 0px 6px 2px vars.$white;
 
   .nav-div {
     background-color: vars.$white;
