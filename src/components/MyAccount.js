@@ -59,13 +59,13 @@ export default function MyAccount({ fav, setFav }) {
             <p>
               Oops! Your list of favourites are currently empty! Go to{" "}
               <Link className="favlist-notif-link" to="/artists">
-                artists{" "}
-              </Link>
+                artists
+              </Link>{" "}
               or{" "}
               <Link className="favlist-notif-link" to="/program">
                 program
               </Link>{" "}
-              to browse bands.{" "}
+              to browse bands.
             </p>
           </section>
         ) : (

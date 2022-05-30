@@ -93,13 +93,15 @@ export default function Header({ isLoggedIn, setIsLoggedIn, setFav }) {
           >
             {isLoggedIn ? (
               <>
-                <Link
-                  id="myprofile-button"
-                  onClick={toggleProfilemenu}
-                  to="/account"
-                >
-                  My Profile
-                </Link>
+                <div id="profile-link-wrapper">
+                  <Link
+                    id="myprofile-button"
+                    onClick={toggleProfilemenu}
+                    to="/account"
+                  >
+                    My Profile
+                  </Link>
+                </div>
                 <p>You are currently logged in</p>
                 <Link id="logout-button" onClick={logOut} to="/">
                   Logout
