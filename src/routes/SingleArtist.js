@@ -120,7 +120,7 @@ export default function SingleArtist({
   // setFav((old) => [...old, { ...artistSchedule[0] }]);
   function ToggleFav() {
     let match = fav.filter((a) => a.act === artistInfo[0].name);
-    console.log(match);
+
     if (match.length === 0) {
       setFav((old) => [...old, { ...artistSchedule[0] }]);
       setFaveBtnActive(true);
