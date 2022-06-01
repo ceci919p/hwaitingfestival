@@ -49,7 +49,7 @@ export default function Header({ isLoggedIn, setIsLoggedIn, setFav }) {
             >
               <li className="nav-item">
                 <Link
-                  id="header_link"
+                  id="header_link_1"
                   className="nav-link"
                   to="/artists"
                   onClick={ToggleBurgermenu}
@@ -59,7 +59,7 @@ export default function Header({ isLoggedIn, setIsLoggedIn, setFav }) {
               </li>
               <li className="nav-item">
                 <Link
-                  id="header_link"
+                  id="header_link_2"
                   className="nav-link"
                   onClick={ToggleBurgermenu}
                   to="/program"
