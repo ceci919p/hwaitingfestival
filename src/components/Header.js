@@ -67,6 +67,16 @@ export default function Header({ isLoggedIn, setIsLoggedIn, setFav }) {
                   See Program
                 </Link>
               </li>
+              <li className="nav-item">
+                <a
+                  id="home-program-link"
+                  href="https://book-hwaiting.detblaarum.dk/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Buy Tickets
+                </a>
+              </li>
             </ul>
 
             <div id="nav-right-side">
